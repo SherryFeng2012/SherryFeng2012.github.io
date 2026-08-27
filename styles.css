@@ -464,7 +464,7 @@ h3 {
 .profile-avatar {
   width: 104px;
   height: 104px;
-  margin: 0 auto 18px;
+  margin: 0 auto 26px;
   padding: 4px;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -481,7 +481,7 @@ h3 {
 }
 
 .hero-title {
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   font-family: var(--serif);
   font-size: clamp(42px, 4.8vw, 58px);
   font-weight: 500;
@@ -491,7 +491,7 @@ h3 {
 
 .hero-title span {
   display: block;
-  margin-top: 10px;
+  margin-top: 13px;
   color: var(--red);
   font-size: 0.62em;
   font-style: normal;
@@ -515,12 +515,12 @@ h3 {
   color: var(--ink);
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .hero-role strong {
   display: block;
-  margin-top: 3px;
+  margin-top: 7px;
   color: var(--red);
   font-size: 20px;
   font-weight: 700;
@@ -528,16 +528,17 @@ h3 {
 }
 
 .hero-summary {
-  max-width: 520px;
-  margin: 14px auto 0;
+  max-width: 600px;
+  margin: 22px auto 0;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.8;
+  text-wrap: balance;
 }
 
 .hero-actions {
   display: flex;
-  margin: 20px 0 0;
+  margin: 28px 0 0;
   align-items: center;
   justify-content: center;
   gap: 24px;
@@ -2242,11 +2243,11 @@ h3 {
   }
 
   .hero-summary {
-    margin-top: 14px;
+    margin-top: 18px;
   }
 
   .hero-actions {
-    margin-top: 20px;
+    margin-top: 24px;
     align-items: center;
     flex-wrap: wrap;
     gap: 14px 22px;
@@ -2255,7 +2256,7 @@ h3 {
   .profile-avatar {
     width: 92px;
     height: 92px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   .social-row {

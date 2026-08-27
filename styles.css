@@ -1161,7 +1161,8 @@ h3 {
 
 .section-topline h2 {
   margin-top: 20px;
-  font-size: clamp(48px, 6vw, 74px);
+  font-size: clamp(34px, 4vw, 52px);
+  letter-spacing: -0.035em;
 }
 
 .model-rail {
@@ -1630,11 +1631,25 @@ h3 {
   position: relative;
   display: grid;
   padding: 13px 10px;
-  grid-template-columns: 52px 155px 1fr auto;
+  grid-template-columns: 52px 165px 1fr auto;
   align-items: center;
   gap: 18px;
   border-bottom: 1px solid var(--line-soft);
   transition: background 180ms ease, padding 180ms ease;
+}
+
+.position-item::after {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 3px;
+  border-radius: 99px;
+  background: linear-gradient(var(--red), #8b5cf6, #0ea5a4);
+  content: "";
+  opacity: 0;
+  transform: scaleY(0.25);
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .position-item::before {
@@ -1650,31 +1665,92 @@ h3 {
   background: var(--bg-soft);
 }
 
+.position-item:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
 .position-org {
   display: inline-flex;
   width: max-content;
-  padding: 5px 9px;
-  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border: 1px solid transparent;
   border-radius: 999px;
-  color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
 
+.position-org.org-institute {
+  border-color: rgba(124, 92, 252, 0.28);
+  background: rgba(124, 92, 252, 0.1);
+  color: #7357df;
+}
+
+.position-org.org-technology {
+  border-color: rgba(226, 35, 26, 0.28);
+  background: rgba(226, 35, 26, 0.09);
+  color: var(--red);
+}
+
 .position-copy h3 {
-  margin-bottom: 5px;
-  font-size: 14px;
+  margin-bottom: 7px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .position-field {
+  display: inline-flex;
+  padding: 3px 8px;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  background: rgba(226, 35, 26, 0.08);
   color: var(--red);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.position-field::before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 0 currentColor;
+  content: "";
+  animation: badgeGlow 2.4s ease-out infinite;
+}
+
+.position-field[data-position-field="具身智能"] {
+  background: rgba(22, 163, 74, 0.1);
+  color: #14833e;
+}
+
+.position-field[data-position-field="多模态"] {
+  background: rgba(124, 92, 252, 0.1);
+  color: #7357df;
+}
+
+.position-field[data-position-field="AI Infra"] {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2762ce;
+}
+
+.position-field[data-position-field="智能体"] {
+  background: rgba(217, 119, 6, 0.11);
+  color: #b56505;
+}
+
+.position-field[data-position-field="语音/数字人"] {
+  background: rgba(219, 39, 119, 0.1);
+  color: #c02670;
+}
+
+.position-field[data-position-field="数据"] {
+  background: rgba(13, 148, 136, 0.1);
+  color: #0d8278;
 }
 
 .apply-link {
@@ -1859,6 +1935,16 @@ h3 {
   }
 }
 
+@keyframes badgeGlow {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  65%,
+  100% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1946,6 +2032,10 @@ h3 {
 
   .position-item {
     grid-template-columns: 42px 130px 1fr auto;
+  }
+
+  .position-copy h3 {
+    font-size: 15px;
   }
 
   .model-rail {

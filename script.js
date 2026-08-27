@@ -352,10 +352,10 @@ if (positionList) {
       .map(
         (position) => `
           <article class="position-item">
-            <span class="position-org">${orgLabels[position.org]}</span>
+            <span class="position-org org-${position.org}">${orgLabels[position.org]}</span>
             <div class="position-copy">
               <h3>${position.title}</h3>
-              <span class="position-field">${position.field}</span>
+              <span class="position-field" data-position-field="${position.field}">${position.field}</span>
             </div>
             <a
               class="apply-link"

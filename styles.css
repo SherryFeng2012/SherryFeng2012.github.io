@@ -168,14 +168,14 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 9px;
 }
 
 .brand-orbit {
   position: relative;
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   place-items: center;
   border: 1px solid currentColor;
   border-radius: 50%;
@@ -200,14 +200,14 @@ h3 {
 }
 
 .brand-orbit span {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: currentColor;
 }
 
 .brand-name {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -448,6 +448,11 @@ h3 {
 }
 
 /* Home */
+.hero-copy {
+  width: min(100%, 560px);
+  justify-self: center;
+}
+
 .profile-hero {
   display: grid;
   min-height: 0;
@@ -2206,6 +2211,10 @@ h3 {
   .profile-hero {
     padding-block: 58px 52px;
     gap: 28px;
+  }
+
+  .hero-copy {
+    width: 100%;
   }
 
   .hero-title {

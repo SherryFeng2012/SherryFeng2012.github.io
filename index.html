@@ -9,16 +9,13 @@
     />
     <meta name="theme-color" content="#f3f1ec" />
     <title>冯晓晴 Sherry Feng | JD TGT</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://research.joyai.com" crossorigin />
+    <link rel="preload" href="/assets/sherry-feng.jpg" as="image" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="styles.css" />
-    <script type="module">
-      try {
-        await import(`./site-config.js?v=${Date.now()}`);
-      } catch (error) {
-        console.error("Failed to load site content", error);
-      }
-      await import(`./script.js?v=${Date.now()}`);
-    </script>
+    <script src="site-config.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body class="home-page" id="top">
     <div class="cursor-light" aria-hidden="true"></div>
@@ -66,6 +63,8 @@
               data-alt="home.photoAlt"
               width="630"
               height="630"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
           <h1 class="hero-title reveal">

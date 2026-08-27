@@ -274,20 +274,35 @@ if (dragRail) {
 const modelVideos = document.querySelectorAll(".model-media video");
 
 if (modelVideos.length) {
-  const videoObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.play().catch(() => {});
-        } else {
-          entry.target.pause();
-        }
-      });
-    },
-    { threshold: 0.35 },
-  );
+  function loadVideo(video) {
+    if (!video.hasAttribute("src") && video.dataset.videoSrc) {
+      video.src = video.dataset.videoSrc;
+      video.load();
+    }
+  }
 
-  modelVideos.forEach((video) => videoObserver.observe(video));
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target);
+            entry.target.play().catch(() => {});
+          } else {
+            entry.target.pause();
+          }
+        });
+      },
+      { rootMargin: "160px 0px", threshold: 0.15 },
+    );
+
+    modelVideos.forEach((video) => videoObserver.observe(video));
+  } else {
+    modelVideos.forEach((video) => {
+      loadVideo(video);
+      video.play().catch(() => {});
+    });
+  }
 }
 
 const workTabs = document.querySelectorAll("[data-work-tab]");

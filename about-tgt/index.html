@@ -9,18 +9,14 @@
     />
     <meta name="theme-color" content="#101314" />
     <title>About TGT | Sherry Feng</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://research.joyai.com" crossorigin />
+    <link rel="preconnect" href="https://s.360buyimg.com" crossorigin />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="../styles.css" />
-    <script type="module">
-      const dataFiles = await Promise.allSettled([
-        import(`../site-config.js?v=${Date.now()}`),
-        import(`../positions-data.js?v=${Date.now()}`),
-      ]);
-      dataFiles
-        .filter(({ status }) => status === "rejected")
-        .forEach(({ reason }) => console.error("Failed to load site data", reason));
-      await import(`../script.js?v=${Date.now()}`);
-    </script>
+    <script src="../site-config.js" defer></script>
+    <script src="../positions-data.js" defer></script>
+    <script src="../script.js" defer></script>
   </head>
   <body class="tgt-page" id="top">
     <div class="cursor-light" aria-hidden="true"></div>
@@ -112,7 +108,7 @@
           <a class="model-card model-coral reveal" href="https://research.joyai.com/joy-video-edit" data-href="links.joyVideoEdit" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>01</span><span>VIDEO · EDIT</span></div>
             <div class="model-media" data-label="JoyAI Video Edit">
-              <video src="https://s.360buyimg.com/researchjoyai/assets/JoyVideoEdit/video-edited.mp4" muted loop playsinline preload="metadata" aria-label="JoyAI-Video-Edit 演示"></video>
+              <video data-video-src="https://s.360buyimg.com/researchjoyai/assets/JoyVideoEdit/video-edited.mp4" muted loop playsinline preload="none" aria-label="JoyAI-Video-Edit 演示"></video>
             </div>
             <div class="model-card-copy">
               <h3>JoyAI-Video-Edit</h3>
@@ -123,7 +119,7 @@
           <a class="model-card model-blue reveal" href="https://research.joyai.com/joyai-vl-interaction" data-href="links.joyVlInteraction" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>02</span><span>VISION · LANGUAGE</span></div>
             <div class="model-media" data-label="JoyAI VL Interaction">
-              <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-VL-Interaction.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-VL-Interaction 演示"></video>
+              <video data-video-src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-VL-Interaction.webm" muted loop playsinline preload="none" aria-label="JoyAI-VL-Interaction 演示"></video>
             </div>
             <div class="model-card-copy">
               <h3>JoyAI-VL-Interaction</h3>
@@ -134,7 +130,7 @@
           <a class="model-card model-violet reveal" href="https://research.joyai.com/joyai-echo" data-href="links.joyAiEcho" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>03</span><span>LONG VIDEO</span></div>
             <div class="model-media" data-label="JoyAI Echo">
-              <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-Echo.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-Echo 演示"></video>
+              <video data-video-src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-Echo.webm" muted loop playsinline preload="none" aria-label="JoyAI-Echo 演示"></video>
             </div>
             <div class="model-card-copy">
               <h3>JoyAI-Echo</h3>
@@ -145,7 +141,7 @@
           <a class="model-card model-lime reveal" href="https://research.joyai.com/joyai-image-edit" data-href="links.joyAiImageEdit" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>04</span><span>IMAGE · EDIT</span></div>
             <div class="model-media" data-label="JoyAI Image Edit">
-              <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-Image-Edit.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-Image-Edit 演示"></video>
+              <video data-video-src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-Image-Edit.webm" muted loop playsinline preload="none" aria-label="JoyAI-Image-Edit 演示"></video>
             </div>
             <div class="model-card-copy">
               <h3>JoyAI-Image-Edit</h3>
@@ -156,7 +152,7 @@
           <a class="model-card model-sand reveal" href="https://research.joyai.com/joyai-voice" data-href="links.joyAiVoice" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>05</span><span>SPEECH · AUDIO</span></div>
             <div class="model-media" data-label="JoyAI Voice">
-              <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/joyAI-voice.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-Voice 演示"></video>
+              <video data-video-src="https://s.360buyimg.com/researchjoyai/assets/home/video/joyAI-voice.webm" muted loop playsinline preload="none" aria-label="JoyAI-Voice 演示"></video>
             </div>
             <div class="model-card-copy">
               <h3>JoyAI-Voice</h3>

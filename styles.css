@@ -174,7 +174,7 @@ h3 {
 .brand-icon {
   width: 1em;
   height: 1em;
-  font-size: 22px;
+  font-size: 17px;
   line-height: 1;
 }
 
@@ -439,8 +439,8 @@ h3 {
 }
 
 .profile-avatar {
-  width: 128px;
-  height: 128px;
+  width: 140px;
+  height: 140px;
   margin: 0 auto 32px;
   padding: 4px;
   border: 1px solid var(--line);
@@ -2471,8 +2471,8 @@ h3 {
   }
 
   .profile-avatar {
-    width: 114px;
-    height: 114px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 24px;
   }
 

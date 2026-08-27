@@ -6,16 +6,13 @@
     <meta name="description" content="冯晓晴（Sherry Feng）的个人介绍。" />
     <meta name="theme-color" content="#f3f1ec" />
     <title>About Me | Sherry Feng</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="preconnect" href="https://research.joyai.com" crossorigin />
+    <link rel="preload" href="/assets/sherry-feng.jpg" as="image" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="../styles.css" />
-    <script type="module">
-      try {
-        await import(`../site-config.js?v=${Date.now()}`);
-      } catch (error) {
-        console.error("Failed to load site content", error);
-      }
-      await import(`../script.js?v=${Date.now()}`);
-    </script>
+    <script src="../site-config.js" defer></script>
+    <script src="../script.js" defer></script>
   </head>
   <body class="about-me-page" id="top">
     <div class="cursor-light" aria-hidden="true"></div>
@@ -54,7 +51,7 @@
 
     <main class="about-me-main shell">
       <section class="about-me-profile reveal">
-        <img class="about-me-avatar" src="../assets/sherry-feng.jpg" data-src="home.photo" alt="冯晓晴 Sherry Feng" data-alt="home.photoAlt" width="630" height="630" />
+        <img class="about-me-avatar" src="../assets/sherry-feng.jpg" data-src="home.photo" alt="冯晓晴 Sherry Feng" data-alt="home.photoAlt" width="630" height="630" decoding="async" fetchpriority="high" />
         <div>
           <p class="about-me-eyebrow">ABOUT ME</p>
           <h1><span data-content="home.nameEnglish">Sherry Feng</span><small>/ <span data-content="home.nameChinese">冯晓晴</span></small></h1>

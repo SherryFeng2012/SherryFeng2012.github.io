@@ -891,7 +891,7 @@ h3 {
 
 .tgt-hero {
   position: relative;
-  min-height: 440px;
+  min-height: 380px;
   overflow: hidden;
   background: #101314;
   color: #f3f1eb;
@@ -928,8 +928,8 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
-  min-height: 440px;
-  padding-block: 54px;
+  min-height: 380px;
+  padding-block: 44px;
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
   align-items: center;
   gap: 80px;
@@ -1025,7 +1025,7 @@ h3 {
 }
 
 .tgt-mission {
-  padding-block: 72px;
+  padding-block: 56px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1084,7 +1084,7 @@ h3 {
 }
 
 .work-section {
-  padding-block: 78px 66px;
+  padding-block: 60px 48px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1138,7 +1138,7 @@ h3 {
 .model-rail {
   display: grid;
   width: var(--shell);
-  margin: 40px auto 0;
+  margin: 30px auto 0;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
@@ -1151,7 +1151,7 @@ h3 {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 286px;
+  min-height: 0;
   overflow: hidden;
   padding: 12px;
   flex-direction: column;
@@ -1204,10 +1204,22 @@ h3 {
 
 .model-media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  display: grid;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
   background: #171918;
+  place-items: center;
+}
+
+.model-media::before {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.42);
+  content: attr(data-label);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .model-media::after {
@@ -1219,6 +1231,8 @@ h3 {
 }
 
 .model-media video {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1341,16 +1355,16 @@ h3 {
 }
 
 .model-card-copy h3 {
-  margin: 12px 2px 5px;
+  margin: 10px 2px 4px;
   font-family: var(--serif);
-  font-size: clamp(19px, 1.65vw, 25px);
+  font-size: clamp(17px, 1.45vw, 22px);
   font-weight: 500;
   letter-spacing: -0.035em;
 }
 
 .model-card-copy p {
-  min-height: 35px;
-  margin: 0 2px 12px;
+  min-height: 0;
+  margin: 0 2px 9px;
   color: rgba(19, 22, 21, 0.68);
   font-size: 10px;
   line-height: 1.55;
@@ -1368,14 +1382,15 @@ h3 {
 
 .paper-grid {
   display: grid;
-  margin-top: 40px;
+  margin-top: 30px;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
 .paper-card {
   position: relative;
-  min-height: 245px;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 16px;
   background: #1c2523;
@@ -1406,7 +1421,7 @@ h3 {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 20px;
+  padding: 16px;
 }
 
 .paper-copy span {
@@ -1420,22 +1435,18 @@ h3 {
   max-width: 530px;
   margin: 10px 0 8px;
   font-family: var(--serif);
-  font-size: clamp(19px, 1.75vw, 25px);
+  font-size: clamp(17px, 1.5vw, 22px);
   font-weight: 500;
   line-height: 1.1;
 }
 
 .paper-copy p {
-  max-width: 520px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 10px;
-  line-height: 1.65;
+  display: none;
 }
 
 .positions-section {
   background: var(--paper);
-  padding-block: 82px;
+  padding-block: 64px;
 }
 
 .positions-note {
@@ -1447,8 +1458,8 @@ h3 {
 }
 
 .position-controls {
-  margin-top: 38px;
-  padding: 22px;
+  margin-top: 30px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--bg);
@@ -1589,7 +1600,7 @@ h3 {
 .position-item {
   position: relative;
   display: grid;
-  padding: 16px 10px;
+  padding: 13px 10px;
   grid-template-columns: 52px 155px 1fr auto;
   align-items: center;
   gap: 18px;
@@ -2048,7 +2059,7 @@ h3 {
 
   .tgt-hero,
   .tgt-hero-content {
-    min-height: 540px;
+    min-height: 500px;
   }
 
   .tgt-hero-content {
@@ -2098,11 +2109,11 @@ h3 {
   }
 
   .tgt-mission {
-    padding-block: 58px;
+    padding-block: 48px;
   }
 
   .work-section {
-    padding-block: 60px 52px;
+    padding-block: 50px 42px;
   }
 
   .work-tabs {
@@ -2124,9 +2135,9 @@ h3 {
   }
 
   .model-card {
-    width: 68vw;
-    min-width: 68vw;
-    min-height: 270px;
+    width: 64vw;
+    min-width: 64vw;
+    min-height: 0;
   }
 
   .paper-grid {
@@ -2138,9 +2149,9 @@ h3 {
   }
 
   .paper-card {
-    width: 76vw;
-    min-width: 76vw;
-    min-height: 260px;
+    width: 72vw;
+    min-width: 72vw;
+    min-height: 0;
   }
 
   .paper-copy {

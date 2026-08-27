@@ -1094,27 +1094,52 @@ h3 {
 
 .work-tabs {
   display: flex;
-  padding: 4px;
-  gap: 3px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg);
+  padding: 5px;
+  gap: 5px;
+  border-radius: 14px;
+  background: #171a19;
+  box-shadow: 0 14px 36px rgba(22, 25, 24, 0.13);
 }
 
 .work-tabs button {
-  padding: 9px 17px;
+  position: relative;
+  display: inline-flex;
+  min-width: 116px;
+  padding: 11px 15px;
+  align-items: center;
+  gap: 11px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 10px;
   background: transparent;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.56);
   cursor: pointer;
   font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.work-tabs button span {
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transition: color 180ms ease;
+}
+
+.work-tabs button:hover:not(.active) {
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .work-tabs button.active {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--red);
+  box-shadow: 0 7px 20px rgba(226, 35, 26, 0.32);
+  color: #fff;
+}
+
+.work-tabs button.active span {
+  color: rgba(255, 255, 255, 0.64);
 }
 
 .work-panel[hidden] {

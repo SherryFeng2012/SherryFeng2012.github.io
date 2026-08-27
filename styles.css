@@ -1566,6 +1566,30 @@ h3 {
   color: var(--bg);
 }
 
+.org-filters button[data-org="institute"] {
+  border-color: rgba(124, 92, 252, 0.28);
+  background: rgba(124, 92, 252, 0.08);
+  color: #7357df;
+}
+
+.org-filters button[data-org="technology"] {
+  border-color: rgba(226, 35, 26, 0.28);
+  background: rgba(226, 35, 26, 0.07);
+  color: var(--red);
+}
+
+.org-filters button[data-org="institute"].active {
+  border-color: #7357df;
+  background: #7357df;
+  color: #fff;
+}
+
+.org-filters button[data-org="technology"].active {
+  border-color: var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
 .search-box {
   display: flex;
   min-width: 250px;
@@ -1596,6 +1620,90 @@ h3 {
 .field-filters button.active {
   border-color: var(--red);
   background: var(--red);
+  color: #fff;
+}
+
+.field-filters button[data-field="大模型"] {
+  border-color: rgba(226, 35, 26, 0.26);
+  background: rgba(226, 35, 26, 0.07);
+  color: var(--red);
+}
+
+.field-filters button[data-field="具身智能"] {
+  border-color: rgba(22, 163, 74, 0.26);
+  background: rgba(22, 163, 74, 0.08);
+  color: #14833e;
+}
+
+.field-filters button[data-field="多模态"] {
+  border-color: rgba(124, 92, 252, 0.26);
+  background: rgba(124, 92, 252, 0.08);
+  color: #7357df;
+}
+
+.field-filters button[data-field="AI Infra"] {
+  border-color: rgba(37, 99, 235, 0.26);
+  background: rgba(37, 99, 235, 0.08);
+  color: #2762ce;
+}
+
+.field-filters button[data-field="智能体"] {
+  border-color: rgba(217, 119, 6, 0.28);
+  background: rgba(217, 119, 6, 0.08);
+  color: #b56505;
+}
+
+.field-filters button[data-field="语音/数字人"] {
+  border-color: rgba(219, 39, 119, 0.26);
+  background: rgba(219, 39, 119, 0.08);
+  color: #c02670;
+}
+
+.field-filters button[data-field="数据"] {
+  border-color: rgba(13, 148, 136, 0.26);
+  background: rgba(13, 148, 136, 0.08);
+  color: #0d8278;
+}
+
+.field-filters button[data-field="大模型"].active {
+  border-color: var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+.field-filters button[data-field="具身智能"].active {
+  border-color: #14833e;
+  background: #14833e;
+  color: #fff;
+}
+
+.field-filters button[data-field="多模态"].active {
+  border-color: #7357df;
+  background: #7357df;
+  color: #fff;
+}
+
+.field-filters button[data-field="AI Infra"].active {
+  border-color: #2762ce;
+  background: #2762ce;
+  color: #fff;
+}
+
+.field-filters button[data-field="智能体"].active {
+  border-color: #b56505;
+  background: #b56505;
+  color: #fff;
+}
+
+.field-filters button[data-field="语音/数字人"].active {
+  border-color: #c02670;
+  background: #c02670;
+  color: #fff;
+}
+
+.field-filters button[data-field="数据"].active {
+  border-color: #0d8278;
+  background: #0d8278;
   color: #fff;
 }
 

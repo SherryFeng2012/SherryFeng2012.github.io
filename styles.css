@@ -433,15 +433,15 @@ h3 {
 .profile-hero {
   display: flex;
   min-height: 0;
-  padding-block: 30px 38px;
+  padding-block: 42px 48px;
   align-items: center;
   justify-content: center;
 }
 
 .profile-avatar {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 32px;
+  width: 172px;
+  height: 172px;
+  margin: 0 auto 38px;
   padding: 4px;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -459,7 +459,7 @@ h3 {
 
 .hero-title {
   display: flex;
-  margin: 0 0 28px;
+  margin: 0 0 32px;
   align-items: baseline;
   justify-content: center;
   gap: 16px;
@@ -507,7 +507,7 @@ h3 {
 
 .hero-role strong {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -516,7 +516,7 @@ h3 {
 
 .hero-summary {
   max-width: 600px;
-  margin: 26px auto 0;
+  margin: 32px auto 0;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.8;
@@ -525,7 +525,7 @@ h3 {
 
 .hero-actions {
   display: flex;
-  margin: 32px 0 0;
+  margin: 38px 0 0;
   align-items: center;
   justify-content: center;
   gap: 24px;
@@ -2366,7 +2366,7 @@ h3 {
 
   .profile-hero {
     min-height: auto;
-    padding-top: 30px;
+    padding-top: 36px;
   }
 
   .hero-summary,
@@ -2446,7 +2446,7 @@ h3 {
   }
 
   .profile-hero {
-    padding-block: 24px 28px;
+    padding-block: 30px 36px;
   }
 
   .hero-copy {
@@ -2460,20 +2460,20 @@ h3 {
   }
 
   .hero-summary {
-    margin-top: 22px;
+    margin-top: 26px;
   }
 
   .hero-actions {
-    margin-top: 28px;
+    margin-top: 32px;
     align-items: center;
     flex-wrap: wrap;
     gap: 14px 22px;
   }
 
   .profile-avatar {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 24px;
+    width: 144px;
+    height: 144px;
+    margin-bottom: 30px;
   }
 
   .social-row {

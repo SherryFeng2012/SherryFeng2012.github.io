@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sherry 的个人主页，记录项目、学习与生活灵感。"
+    />
+    <title>Sherry | Personal Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="返回首页">
+        <span class="brand-mark">S</span>
+        <span>Sherry</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#about">关于我</a>
+        <a href="#interests">我的关注</a>
+        <a href="#contact">联系我</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式">
+        <span aria-hidden="true">☼</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> HELLO, NICE TO MEET YOU</p>
+          <h1>你好，我是 <em>Sherry</em></h1>
+          <p class="hero-intro">
+            欢迎来到我的网络小站。这里记录我的项目、学习过程，以及每一个值得收藏的灵感瞬间。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#about">认识我 <span>→</span></a>
+            <a
+              class="button button-secondary"
+              href="https://github.com/SherryFeng2012"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="orbit orbit-large"></div>
+          <div class="orbit orbit-small"></div>
+          <div class="portrait-card">
+            <div class="portrait-shine"></div>
+            <span class="portrait-initial">S</span>
+            <p>Stay curious.</p>
+          </div>
+          <span class="floating-tag tag-create">CREATE</span>
+          <span class="floating-tag tag-learn">LEARN</span>
+          <span class="spark spark-one">✦</span>
+          <span class="spark spark-two">✦</span>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-heading reveal">
+          <p class="section-number">01 / ABOUT</p>
+          <h2>保持好奇，持续生长。</h2>
+        </div>
+        <div class="about-content reveal">
+          <p class="about-lead">
+            我相信每一次探索都在塑造更好的自己。
+          </p>
+          <p>
+            这是我的第一块数字空间。我会在这里整理正在完成的事情、分享新学到的知识，也记录生活中带来启发的小事。
+          </p>
+          <div class="signature">Sherry <span>✦</span></div>
+        </div>
+      </section>
+
+      <section class="section interests" id="interests">
+        <div class="section-heading reveal">
+          <p class="section-number">02 / EXPLORE</p>
+          <h2>现在关注的事情</h2>
+        </div>
+        <div class="card-grid">
+          <article class="interest-card reveal">
+            <span class="card-icon">01</span>
+            <h3>项目实践</h3>
+            <p>把想法变成真实、可用、不断完善的作品。</p>
+            <span class="card-line"></span>
+          </article>
+          <article class="interest-card reveal">
+            <span class="card-icon">02</span>
+            <h3>学习笔记</h3>
+            <p>整理新知识，让每一次学习都有迹可循。</p>
+            <span class="card-line"></span>
+          </article>
+          <article class="interest-card reveal">
+            <span class="card-icon">03</span>
+            <h3>灵感收藏</h3>
+            <p>收集设计、文字与生活里让人眼前一亮的瞬间。</p>
+            <span class="card-line"></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact reveal" id="contact">
+        <p class="section-number">03 / CONTACT</p>
+        <h2>很高兴认识你。</h2>
+        <p>有想法想要交流？随时给我写信。</p>
+        <a class="contact-link" href="mailto:1173426941@qq.com">
+          1173426941@qq.com <span>↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Sherry Feng</p>
+      <p>Made with curiosity &amp; care.</p>
+    </footer>
+  </body>
+</html>

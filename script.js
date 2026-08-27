@@ -148,6 +148,25 @@ if (dragRail) {
   );
 }
 
+const modelVideos = document.querySelectorAll(".model-media video");
+
+if (modelVideos.length) {
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    },
+    { threshold: 0.35 },
+  );
+
+  modelVideos.forEach((video) => videoObserver.observe(video));
+}
+
 const canvas = document.querySelector("#tgt-network");
 
 if (canvas) {
@@ -281,8 +300,12 @@ const positionList = document.querySelector("#position-list");
 
 if (positionList) {
   const positionCount = document.querySelector("#position-count");
+  const pageLabel = document.querySelector("#position-page");
+  const previousButton = document.querySelector("#position-prev");
+  const nextButton = document.querySelector("#position-next");
   const searchInput = document.querySelector("#position-search");
-  const state = { cohort: "graduate", org: "all", field: "all", query: "" };
+  const state = { cohort: "graduate", org: "all", field: "all", query: "", page: 1 };
+  const pageSize = 8;
   const orgLabels = { institute: "探索研究院", technology: "京东科技" };
 
   function renderPositions() {
@@ -294,14 +317,21 @@ if (positionList) {
       return matchesCohort && matchesOrg && matchesField && matchesQuery;
     });
 
+    const pageTotal = Math.max(1, Math.ceil(filtered.length / pageSize));
+    state.page = Math.min(state.page, pageTotal);
+    const visiblePositions = filtered.slice((state.page - 1) * pageSize, state.page * pageSize);
+
     positionCount.textContent = String(filtered.length).padStart(2, "0");
+    pageLabel.textContent = `${state.page} / ${pageTotal}`;
+    previousButton.disabled = state.page === 1;
+    nextButton.disabled = state.page === pageTotal;
 
     if (!filtered.length) {
       positionList.innerHTML = '<p class="no-results">暂时没有匹配的课题，试试其他关键词或筛选条件。</p>';
       return;
     }
 
-    positionList.innerHTML = filtered
+    positionList.innerHTML = visiblePositions
       .map(
         (position) => `
           <article class="position-item">
@@ -328,6 +358,7 @@ if (positionList) {
       document.querySelectorAll("[data-cohort]").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       state.cohort = button.dataset.cohort;
+      state.page = 1;
       renderPositions();
     });
   });
@@ -337,6 +368,7 @@ if (positionList) {
       document.querySelectorAll("[data-org]").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       state.org = button.dataset.org;
+      state.page = 1;
       renderPositions();
     });
   });
@@ -346,12 +378,24 @@ if (positionList) {
       document.querySelectorAll("[data-field]").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       state.field = button.dataset.field;
+      state.page = 1;
       renderPositions();
     });
   });
 
   searchInput.addEventListener("input", () => {
     state.query = searchInput.value.trim().toLowerCase();
+    state.page = 1;
+    renderPositions();
+  });
+
+  previousButton.addEventListener("click", () => {
+    state.page -= 1;
+    renderPositions();
+  });
+
+  nextButton.addEventListener("click", () => {
+    state.page += 1;
     renderPositions();
   });
 

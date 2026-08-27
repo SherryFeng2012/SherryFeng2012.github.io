@@ -449,7 +449,7 @@ h3 {
 
 /* Home */
 .hero-copy {
-  width: min(100%, 560px);
+  width: min(100%, 600px);
   text-align: center;
 }
 
@@ -483,7 +483,7 @@ h3 {
 .hero-title {
   margin: 0 0 16px;
   font-family: var(--serif);
-  font-size: clamp(38px, 4.4vw, 52px);
+  font-size: clamp(42px, 4.8vw, 58px);
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 0.96;
@@ -493,7 +493,7 @@ h3 {
   display: block;
   margin-top: 10px;
   color: var(--red);
-  font-size: 0.6em;
+  font-size: 0.62em;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -513,7 +513,7 @@ h3 {
 .hero-role p {
   margin-bottom: 0;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -522,17 +522,17 @@ h3 {
   display: block;
   margin-top: 3px;
   color: var(--red);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.025em;
 }
 
 .hero-summary {
-  max-width: 480px;
+  max-width: 520px;
   margin: 14px auto 0;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .hero-actions {
@@ -2160,7 +2160,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: clamp(40px, 7vw, 52px);
+    font-size: clamp(44px, 8vw, 58px);
   }
 
   .portrait-stage {
@@ -2237,7 +2237,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: clamp(36px, 11vw, 44px);
+    font-size: clamp(40px, 12vw, 48px);
     line-height: 0.96;
   }
 
@@ -2506,7 +2506,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .halo-one {

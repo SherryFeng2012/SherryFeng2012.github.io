@@ -168,53 +168,26 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 9px;
 }
 
-.brand-orbit {
-  position: relative;
-  display: grid;
+.brand-icon {
   width: 18px;
   height: 18px;
-  place-items: center;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-}
-
-.brand-orbit::before,
-.brand-orbit::after {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--red);
-  content: "";
-}
-
-.brand-orbit::before {
-  top: -2px;
-}
-
-.brand-orbit::after {
-  bottom: -2px;
-}
-
-.brand-orbit span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: currentColor;
+  fill: currentColor;
+  transform: rotate(-8deg);
 }
 
 .brand-name {
-  font-size: 10px;
+  color: inherit;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.025em;
 }
 
-.brand-name span {
+.brand-name .brand-accent {
   margin-left: 4px;
-  color: var(--red);
+  color: inherit;
 }
 
 .desktop-nav {
@@ -399,6 +372,10 @@ h3 {
   font-size: 17px;
 }
 
+.button .button-label {
+  font-size: inherit;
+}
+
 .button:hover {
   transform: translateY(-3px);
 }
@@ -462,8 +439,8 @@ h3 {
 }
 
 .profile-avatar {
-  width: 112px;
-  height: 112px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 32px;
   padding: 4px;
   border: 1px solid var(--line);
@@ -481,22 +458,32 @@ h3 {
 }
 
 .hero-title {
+  display: flex;
   margin: 0 0 28px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 16px;
   font-family: var(--serif);
-  font-size: clamp(42px, 4.8vw, 58px);
+  font-size: clamp(38px, 4.2vw, 50px);
   font-weight: 500;
-  letter-spacing: -0.055em;
-  line-height: 0.96;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .hero-title span {
-  display: block;
-  margin-top: 15px;
-  color: var(--red);
-  font-size: 0.62em;
+  display: inline;
+  margin: 0;
+  color: inherit;
+  font-size: 1em;
   font-style: normal;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.hero-title .hero-name-en {
+  color: var(--red);
   font-weight: 400;
-  letter-spacing: -0.035em;
 }
 
 .hero-role {
@@ -521,10 +508,10 @@ h3 {
 .hero-role strong {
   display: block;
   margin-top: 8px;
-  color: var(--red);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 
 .hero-summary {
@@ -1174,6 +1161,10 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.12em;
   transition: color 180ms ease;
+}
+
+.work-tabs button b {
+  font: inherit;
 }
 
 .work-tabs button:hover:not(.active) {
@@ -2161,7 +2152,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: clamp(44px, 8vw, 58px);
+    font-size: clamp(38px, 7vw, 50px);
   }
 
   .portrait-stage {
@@ -2238,8 +2229,9 @@ h3 {
   }
 
   .hero-title {
-    font-size: clamp(40px, 12vw, 48px);
-    line-height: 0.96;
+    gap: 12px;
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 1;
   }
 
   .hero-summary {
@@ -2254,8 +2246,8 @@ h3 {
   }
 
   .profile-avatar {
-    width: 100px;
-    height: 100px;
+    width: 108px;
+    height: 108px;
     margin-bottom: 24px;
   }
 
@@ -2502,12 +2494,9 @@ h3 {
 }
 
 @media (max-width: 390px) {
-  .brand-name {
-    display: none;
-  }
-
   .hero-title {
-    font-size: 40px;
+    gap: 9px;
+    font-size: 30px;
   }
 
   .halo-one {

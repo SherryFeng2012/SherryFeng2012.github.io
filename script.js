@@ -1,3 +1,34 @@
+const siteContent = window.SITE_CONTENT || {};
+
+function getSiteContent(path) {
+  return path.split(".").reduce((value, key) => value?.[key], siteContent);
+}
+
+document.querySelectorAll("[data-content]").forEach((element) => {
+  const value = getSiteContent(element.dataset.content);
+  if (typeof value === "string") element.textContent = value;
+});
+
+document.querySelectorAll("[data-href]").forEach((element) => {
+  const value = getSiteContent(element.dataset.href);
+  if (typeof value === "string") element.setAttribute("href", value);
+});
+
+document.querySelectorAll("[data-src]").forEach((element) => {
+  const value = getSiteContent(element.dataset.src);
+  if (typeof value === "string") element.setAttribute("src", value);
+});
+
+document.querySelectorAll("[data-alt]").forEach((element) => {
+  const value = getSiteContent(element.dataset.alt);
+  if (typeof value === "string") element.setAttribute("alt", value);
+});
+
+document.querySelectorAll("[data-placeholder]").forEach((element) => {
+  const value = getSiteContent(element.dataset.placeholder);
+  if (typeof value === "string") element.setAttribute("placeholder", value);
+});
+
 const root = document.documentElement;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -273,6 +304,14 @@ if (canvas) {
 
 const positions = window.TGT_POSITIONS || [];
 
+const openPositionTotal = document.querySelector("#open-position-total");
+const departmentTotal = document.querySelector("#department-total");
+const directionTotal = document.querySelector("#direction-total");
+
+if (openPositionTotal) openPositionTotal.textContent = String(positions.length).padStart(2, "0");
+if (departmentTotal) departmentTotal.textContent = String(new Set(positions.map(({ org }) => org)).size).padStart(2, "0");
+if (directionTotal) directionTotal.textContent = String(new Set(positions.map(({ field }) => field)).size).padStart(2, "0");
+
 const positionList = document.querySelector("#position-list");
 
 if (positionList) {
@@ -281,9 +320,43 @@ if (positionList) {
   const previousButton = document.querySelector("#position-prev");
   const nextButton = document.querySelector("#position-next");
   const searchInput = document.querySelector("#position-search");
+  const fieldFilters = document.querySelector(".field-filters");
   const state = { cohort: "graduate", org: "all", field: "all", query: "", page: 1 };
   const pageSize = 8;
-  const orgLabels = { institute: "探索研究院", technology: "京东科技" };
+  const fieldOrder = ["大模型", "具身智能", "多模态", "AI Infra", "智能体", "语音/数字人", "数据"];
+  const orgLabels = {
+    institute: getSiteContent("about.positions.institute") || "探索研究院",
+    technology: getSiteContent("about.positions.technology") || "京东科技",
+  };
+  const positionBaseUrl = getSiteContent("links.campusPositionBase") || "https://campus.jd.com/#/details?id=";
+
+  function renderFieldFilters() {
+    if (!fieldFilters) return;
+
+    const matchingPositions = positions.filter(
+      (position) => position.cohort === state.cohort && (state.org === "all" || position.org === state.org),
+    );
+    const availableFields = [...new Set(matchingPositions.map((position) => position.field).filter(Boolean))].sort((first, second) => {
+      const firstIndex = fieldOrder.indexOf(first);
+      const secondIndex = fieldOrder.indexOf(second);
+      const firstRank = firstIndex === -1 ? fieldOrder.length : firstIndex;
+      const secondRank = secondIndex === -1 ? fieldOrder.length : secondIndex;
+      return firstRank - secondRank || first.localeCompare(second, "zh-CN");
+    });
+
+    if (state.field !== "all" && !availableFields.includes(state.field)) state.field = "all";
+
+    const buttons = ["all", ...availableFields].map((field) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.field = field;
+      button.textContent = field === "all" ? getSiteContent("about.positions.allDirections") || "全部方向" : field;
+      button.classList.toggle("active", state.field === field);
+      return button;
+    });
+
+    fieldFilters.replaceChildren(...buttons);
+  }
 
   function renderPositions() {
     const filtered = positions.filter((position) => {
@@ -319,7 +392,7 @@ if (positionList) {
             </div>
             <a
               class="apply-link"
-              href="https://campus.jd.com/#/details?id=${position.id}"
+              href="${positionBaseUrl}${position.id}"
               target="_blank"
               rel="noreferrer"
               aria-label="申请：${position.title}"
@@ -336,6 +409,7 @@ if (positionList) {
       button.classList.add("active");
       state.cohort = button.dataset.cohort;
       state.page = 1;
+      renderFieldFilters();
       renderPositions();
     });
   });
@@ -346,18 +420,18 @@ if (positionList) {
       button.classList.add("active");
       state.org = button.dataset.org;
       state.page = 1;
+      renderFieldFilters();
       renderPositions();
     });
   });
 
-  document.querySelectorAll("[data-field]").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll("[data-field]").forEach((item) => item.classList.remove("active"));
-      button.classList.add("active");
-      state.field = button.dataset.field;
-      state.page = 1;
-      renderPositions();
-    });
+  fieldFilters?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-field]");
+    if (!button || !fieldFilters.contains(button)) return;
+    state.field = button.dataset.field;
+    state.page = 1;
+    renderFieldFilters();
+    renderPositions();
   });
 
   searchInput.addEventListener("input", () => {
@@ -376,5 +450,6 @@ if (positionList) {
     renderPositions();
   });
 
+  renderFieldFilters();
   renderPositions();
 }

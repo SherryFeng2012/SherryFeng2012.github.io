@@ -11,12 +11,14 @@
     <title>About TGT | Sherry Feng</title>
     <link rel="stylesheet" href="../styles.css" />
     <script type="module">
-      try {
-        await import(`../positions-data.js?v=${Date.now()}`);
-      } catch (error) {
-        console.error("Failed to load position data", error);
-      }
-      await import("../script.js");
+      const dataFiles = await Promise.allSettled([
+        import(`../site-config.js?v=${Date.now()}`),
+        import(`../positions-data.js?v=${Date.now()}`),
+      ]);
+      dataFiles
+        .filter(({ status }) => status === "rejected")
+        .forEach(({ reason }) => console.error("Failed to load site data", reason));
+      await import(`../script.js?v=${Date.now()}`);
     </script>
   </head>
   <body class="tgt-page" id="top">
@@ -25,14 +27,16 @@
 
     <header class="site-header shell">
       <a class="brand" href="../" aria-label="Sherry Feng 首页">
-        <span class="brand-orbit"><span></span></span>
-        <span class="brand-name">SHERRY<span>FENG</span></span>
+        <svg class="brand-icon" viewBox="0 0 512 512" aria-hidden="true">
+          <path d="M156.6 384.9 125.7 354c-8.5-8.5-11.5-20.8-7.9-32.2 29.4-94.2 105.4-173.1 197.1-205.9l-83.8-83.8C192.3-6.7 125.5-9.9 83.7 25.3L18.8 80C7.8 89.3 1.2 102.8.6 117.2L0 128c0 13.3 10.7 24 24 24h97.2c-12.5 17.9-23.7 36.9-33.5 56.8-5.3 10.8-3.1 23.6 5.4 32.1l178 178c8.5 8.5 21.3 10.7 32.1 5.4 19.9-9.8 38.9-21 56.8-33.5V488c0 13.3 10.7 24 24 24l10.8-.6c14.4-.8 27.9-7.3 37.2-18.3l54.7-64.9c35.2-41.8 32-108.6-6.7-147.3l-83.8-83.8c-32.8 91.7-111.7 167.7-205.9 197.1-11.4 3.6-23.7.6-32.2-7.9zM416 128a32 32 0 1 1 64 0 32 32 0 1 1-64 0zM47.7 369.7c-20.1 20.1-38.6 62-45.4 79.1-2.5 6.3-1.1 13.6 3.7 18.4s12 6.2 18.4 3.7c17.1-6.8 59.1-25.3 79.1-45.4 22-22 22-57.7 0-79.7s-57.7-22-79.7 0z" />
+        </svg>
+        <span class="brand-name"><span data-content="brand.first">Sherry</span><span class="brand-accent" data-content="brand.accent">Feng</span></span>
       </a>
 
       <nav class="desktop-nav" aria-label="主导航">
         <a href="../">Home</a>
         <a class="active" href="./">About TGT</a>
-        <a href="https://research.joyai.com/" target="_blank" rel="noreferrer">Research ↗</a>
+        <a href="https://research.joyai.com/" data-href="links.research" target="_blank" rel="noreferrer">Research ↗</a>
       </nav>
 
       <div class="header-actions">
@@ -48,7 +52,7 @@
       <nav class="mobile-nav" aria-label="移动端导航">
         <a href="../">Home</a>
         <a href="./">About TGT</a>
-        <a href="https://research.joyai.com/" target="_blank" rel="noreferrer">Research ↗</a>
+        <a href="https://research.joyai.com/" data-href="links.research" target="_blank" rel="noreferrer">Research ↗</a>
       </nav>
     </header>
 
@@ -58,17 +62,17 @@
         <div class="tgt-hero-grid" aria-hidden="true"></div>
         <div class="shell tgt-hero-content">
           <div class="tgt-hero-heading">
-            <p class="hero-kicker reveal"><span class="live-dot"></span> JD TGT · 2027</p>
-            <h1 class="tgt-title reveal">Tech <em>Genius</em> Team</h1>
+            <p class="hero-kicker reveal"><span class="live-dot"></span><span data-content="about.hero.kicker">JD TGT · 2027</span></p>
+            <h1 class="tgt-title reveal"><span data-content="about.hero.titlePrefix">Tech</span> <em data-content="about.hero.titleAccent">Genius</em> <span data-content="about.hero.titleSuffix">Team</span></h1>
           </div>
           <div class="tgt-hero-summary reveal">
-            <p>TGT 是京东面向全球优秀青年技术人才打造的顶尖人才计划，与一流团队一起探索 AI 的下一条边界。</p>
+            <p data-content="about.hero.summary">TGT 是京东面向全球优秀青年技术人才打造的顶尖人才计划，与一流团队一起探索 AI 的下一条边界。</p>
             <div class="hero-metrics">
-              <div><strong>39</strong><span>开放课题</span></div>
-              <div><strong>02</strong><span>核心团队</span></div>
-              <div><strong>07</strong><span>前沿方向</span></div>
+              <div><strong id="open-position-total">39</strong><span data-content="about.hero.openLabel">开放课题</span></div>
+              <div><strong id="department-total">02</strong><span data-content="about.hero.departmentsLabel">核心部门</span></div>
+              <div><strong id="direction-total">07</strong><span data-content="about.hero.directionsLabel">前沿方向</span></div>
             </div>
-            <a class="button button-red magnetic" href="#positions">查看开放课题 <span>↓</span></a>
+            <a class="button button-red magnetic" href="#positions"><span class="button-label" data-content="about.hero.action">查看开放课题</span><span>↓</span></a>
           </div>
         </div>
       </section>
@@ -76,8 +80,8 @@
       <section class="tgt-mission shell section-space">
         <div class="section-index reveal">01 — THE MISSION</div>
         <div class="mission-statement reveal">
-          <p>我们寻找对未知保持兴奋、对难题保持耐心的 Tech Genius。</p>
-          <h2>在真实产业场景中，<br />探索技术的下一条边界。</h2>
+          <p data-content="about.mission.lead">我们寻找对未知保持兴奋、对难题保持耐心的 Tech Genius。</p>
+          <h2><span data-content="about.mission.titleLineOne">在真实产业场景中，</span><br /><span data-content="about.mission.titleLineTwo">探索技术的下一条边界。</span></h2>
         </div>
         <div class="discipline-cloud reveal" aria-label="研究方向">
           <span class="hot">基础大模型</span>
@@ -95,16 +99,16 @@
         <div class="shell section-topline reveal">
           <div>
             <p class="section-index">02 — SELECTED WORK</p>
-            <h2>代表性成果</h2>
+            <h2 data-content="about.work.heading">代表性成果</h2>
           </div>
           <div class="work-tabs" aria-label="成果类型">
-            <button class="active" type="button" data-work-tab="models"><span>01</span>模型成果</button>
-            <button type="button" data-work-tab="papers"><span>02</span>论文成果</button>
+            <button class="active" type="button" data-work-tab="models"><span>01</span><b data-content="about.work.modelsTab">模型成果</b></button>
+            <button type="button" data-work-tab="papers"><span>02</span><b data-content="about.work.papersTab">论文成果</b></button>
           </div>
         </div>
         <div class="work-panel" data-work-panel="models">
           <div class="model-rail">
-          <a class="model-card model-coral reveal" href="https://research.joyai.com/joy-video-edit" target="_blank" rel="noreferrer">
+          <a class="model-card model-coral reveal" href="https://research.joyai.com/joy-video-edit" data-href="links.joyVideoEdit" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>01</span><span>VIDEO · EDIT</span></div>
             <div class="model-media" data-label="JoyAI Video Edit">
               <video src="https://s.360buyimg.com/researchjoyai/assets/JoyVideoEdit/video-edited.mp4" muted loop playsinline preload="metadata" aria-label="JoyAI-Video-Edit 演示"></video>
@@ -115,7 +119,7 @@
               <span>查看项目 ↗</span>
             </div>
           </a>
-          <a class="model-card model-blue reveal" href="https://research.joyai.com/joyai-vl-interaction" target="_blank" rel="noreferrer">
+          <a class="model-card model-blue reveal" href="https://research.joyai.com/joyai-vl-interaction" data-href="links.joyVlInteraction" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>02</span><span>VISION · LANGUAGE</span></div>
             <div class="model-media" data-label="JoyAI VL Interaction">
               <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-VL-Interaction.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-VL-Interaction 演示"></video>
@@ -126,7 +130,7 @@
               <span>查看项目 ↗</span>
             </div>
           </a>
-          <a class="model-card model-violet reveal" href="https://research.joyai.com/joyai-echo" target="_blank" rel="noreferrer">
+          <a class="model-card model-violet reveal" href="https://research.joyai.com/joyai-echo" data-href="links.joyAiEcho" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>03</span><span>LONG VIDEO</span></div>
             <div class="model-media" data-label="JoyAI Echo">
               <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-Echo.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-Echo 演示"></video>
@@ -137,7 +141,7 @@
               <span>查看项目 ↗</span>
             </div>
           </a>
-          <a class="model-card model-lime reveal" href="https://research.joyai.com/joyai-image-edit" target="_blank" rel="noreferrer">
+          <a class="model-card model-lime reveal" href="https://research.joyai.com/joyai-image-edit" data-href="links.joyAiImageEdit" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>04</span><span>IMAGE · EDIT</span></div>
             <div class="model-media" data-label="JoyAI Image Edit">
               <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/JoyAI-Image-Edit.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-Image-Edit 演示"></video>
@@ -148,7 +152,7 @@
               <span>查看项目 ↗</span>
             </div>
           </a>
-          <a class="model-card model-sand reveal" href="https://research.joyai.com/joyai-voice" target="_blank" rel="noreferrer">
+          <a class="model-card model-sand reveal" href="https://research.joyai.com/joyai-voice" data-href="links.joyAiVoice" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>05</span><span>SPEECH · AUDIO</span></div>
             <div class="model-media" data-label="JoyAI Voice">
               <video src="https://s.360buyimg.com/researchjoyai/assets/home/video/joyAI-voice.webm" muted loop playsinline preload="metadata" aria-label="JoyAI-Voice 演示"></video>
@@ -163,7 +167,7 @@
         </div>
         <div class="work-panel shell" data-work-panel="papers" hidden>
           <div class="paper-grid">
-            <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/eccv-2026-papers" target="_blank" rel="noreferrer">
+            <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/eccv-2026-papers" data-href="links.eccv2026" target="_blank" rel="noreferrer">
               <img src="../assets/research/eccv-2026.webp" alt="ECCV 2026 京东探索研究院论文入选" loading="lazy" />
               <div class="paper-copy">
                 <span>ECCV 2026 · 4 PAPERS</span>
@@ -171,7 +175,7 @@
                 <p>探索多模态理解中的幻觉识别、空间推理与缓解方法。</p>
               </div>
             </a>
-            <a class="paper-card reveal" href="https://research.joyai.com/blog/iros-2026-papers" target="_blank" rel="noreferrer">
+            <a class="paper-card reveal" href="https://research.joyai.com/blog/iros-2026-papers" data-href="links.iros2026" target="_blank" rel="noreferrer">
               <img src="../assets/research/iros-2026.webp" alt="IROS 2026 京东探索研究院论文入选" loading="lazy" />
               <div class="paper-copy">
                 <span>IROS 2026</span>
@@ -179,7 +183,7 @@
                 <p>从模仿学习到强化学习协同训练。</p>
               </div>
             </a>
-            <a class="paper-card reveal" href="https://research.joyai.com/blog/icml-2026-papers" target="_blank" rel="noreferrer">
+            <a class="paper-card reveal" href="https://research.joyai.com/blog/icml-2026-papers" data-href="links.icml2026" target="_blank" rel="noreferrer">
               <img src="../assets/research/icml-2026.webp" alt="ICML 2026 京东探索研究院论文入选" loading="lazy" />
               <div class="paper-copy">
                 <span>ICML 2026 · 2 PAPERS</span>
@@ -187,7 +191,7 @@
                 <p>围绕生成模型与语言模型推理展开前沿探索。</p>
               </div>
             </a>
-            <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/acm-mm-2026-papers" target="_blank" rel="noreferrer">
+            <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/acm-mm-2026-papers" data-href="links.acmMm2026" target="_blank" rel="noreferrer">
               <img src="../assets/research/acmmm-2026.webp" alt="ACM MM 2026 京东探索研究院论文入选" loading="lazy" />
               <div class="paper-copy">
                 <span>ACM MM 2026 · 3 PAPERS</span>
@@ -198,7 +202,7 @@
           </div>
         </div>
         <div class="shell work-footer">
-          <a class="arrow-link" href="https://research.joyai.com/" target="_blank" rel="noreferrer">前往 JoyAI 研究门户 <span>↗</span></a>
+          <a class="arrow-link" href="https://research.joyai.com/" data-href="links.research" target="_blank" rel="noreferrer"><span data-content="about.work.portalAction">前往 JoyAI 研究门户</span><span>↗</span></a>
         </div>
       </section>
 
@@ -207,36 +211,29 @@
           <div class="section-topline reveal">
             <div>
               <p class="section-index">03 — OPEN POSITIONS</p>
-              <h2>TGT 课题投递</h2>
+              <h2 data-content="about.positions.heading">TGT 课题投递</h2>
             </div>
-            <p class="positions-note">选择感兴趣的方向，点击即可前往京东校园招聘官网投递。</p>
+            <p class="positions-note" data-content="about.positions.note">选择感兴趣的方向，点击即可前往京东校园招聘官网投递。</p>
           </div>
 
           <div class="position-controls reveal">
             <div class="segmented-control" aria-label="招聘类型">
-              <button class="active" type="button" data-cohort="graduate">应届生课题</button>
-              <button type="button" data-cohort="intern">实习生课题</button>
+              <button class="active" type="button" data-cohort="graduate" data-content="about.positions.graduateTab">应届生课题</button>
+              <button type="button" data-cohort="intern" data-content="about.positions.internTab">实习生课题</button>
             </div>
             <div class="position-toolbar">
               <div class="org-filters" aria-label="所属团队">
-                <button class="active" type="button" data-org="all">全部团队</button>
-                <button type="button" data-org="institute">探索研究院</button>
-                <button type="button" data-org="technology">京东科技</button>
+                <button class="active" type="button" data-org="all" data-content="about.positions.allTeams">全部团队</button>
+                <button type="button" data-org="institute" data-content="about.positions.institute">探索研究院</button>
+                <button type="button" data-org="technology" data-content="about.positions.technology">京东科技</button>
               </div>
               <label class="search-box">
                 <span aria-hidden="true">⌕</span>
-                <input type="search" id="position-search" placeholder="搜索课题关键词" autocomplete="off" />
+                <input type="search" id="position-search" placeholder="搜索课题关键词" data-placeholder="about.positions.searchPlaceholder" autocomplete="off" />
               </label>
             </div>
             <div class="field-filters" aria-label="研究方向">
-              <button class="active" type="button" data-field="all">全部方向</button>
-              <button type="button" data-field="大模型">大模型</button>
-              <button type="button" data-field="具身智能">具身智能</button>
-              <button type="button" data-field="多模态">多模态</button>
-              <button type="button" data-field="AI Infra">AI Infra</button>
-              <button type="button" data-field="智能体">智能体</button>
-              <button type="button" data-field="语音/数字人">语音/数字人</button>
-              <button type="button" data-field="数据">数据</button>
+              <button class="active" type="button" data-field="all" data-content="about.positions.allDirections">全部方向</button>
             </div>
           </div>
 
@@ -257,9 +254,9 @@
       <section class="contact-strip shell reveal">
         <div>
           <p class="section-index">04 — CONTACT</p>
-          <h2>关于 TGT，还有问题？</h2>
+          <h2 data-content="about.contact.heading">关于 TGT，还有问题？</h2>
         </div>
-        <a href="mailto:fengxiaojing.sherry@jd.com">联系 Sherry <span>↗</span></a>
+        <a href="mailto:fengxiaojing.sherry@jd.com" data-href="links.email"><span data-content="about.contact.action">联系 Sherry</span><span>↗</span></a>
       </section>
     </main>
 

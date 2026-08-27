@@ -7,6 +7,8 @@
 
 网站使用原生 HTML、CSS 和 JavaScript 构建，通过 GitHub Pages 发布。
 
+完整的 GitHub 网页端修改方法见 [`MAINTENANCE.md`](MAINTENANCE.md)。
+
 ## 维护 TGT 课题
 
 所有课题集中保存在根目录的 `positions-data.js`。每个课题是一条对象数据：

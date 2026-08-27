@@ -966,6 +966,10 @@ h3 {
   line-height: 1.8;
 }
 
+.tgt-hero-summary > .button {
+  margin-top: 10px;
+}
+
 .hero-metrics {
   display: flex;
   margin: 28px 0;

@@ -439,23 +439,23 @@ h3 {
   padding-block: 68px 90px;
   grid-template-columns: 1.02fr 0.98fr;
   align-items: center;
-  gap: 78px;
+  gap: 64px;
 }
 
 .hero-title {
-  margin: 26px 0 24px;
+  margin: 22px 0 26px;
   font-family: var(--serif);
-  font-size: clamp(68px, 8vw, 112px);
+  font-size: clamp(58px, 6.7vw, 94px);
   font-weight: 500;
   letter-spacing: -0.07em;
-  line-height: 0.86;
+  line-height: 0.9;
 }
 
 .hero-title span {
   display: block;
   margin-top: 18px;
   color: var(--red);
-  font-size: 0.62em;
+  font-size: 0.58em;
   font-style: normal;
   font-weight: 300;
   letter-spacing: -0.045em;
@@ -464,39 +464,45 @@ h3 {
 .hero-role {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 16px;
 }
 
 .role-line {
-  width: 42px;
-  height: 1px;
-  margin-top: 13px;
+  width: 3px;
+  height: 52px;
+  margin-top: 2px;
+  border-radius: 99px;
   background: var(--red);
 }
 
 .hero-role p {
   margin-bottom: 0;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.75;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .hero-role strong {
-  color: var(--ink);
-  font-weight: 600;
+  display: block;
+  margin-top: 4px;
+  color: var(--red);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 .hero-summary {
-  max-width: 560px;
-  margin: 32px 0 0 60px;
+  max-width: 520px;
+  margin: 28px 0 0 60px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.9;
 }
 
 .hero-actions {
   display: flex;
-  margin: 36px 0 0 60px;
+  margin: 30px 0 0 60px;
   align-items: center;
   gap: 30px;
 }
@@ -724,7 +730,7 @@ h3 {
   display: grid;
   margin-top: 55px;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 90px;
+  gap: 64px;
 }
 
 .mission-heading h2,
@@ -734,7 +740,7 @@ h3 {
 .contact-panel h2 {
   margin-bottom: 0;
   font-family: var(--serif);
-  font-size: clamp(48px, 6vw, 82px);
+  font-size: clamp(40px, 4.8vw, 64px);
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 1.02;
@@ -761,7 +767,7 @@ h3 {
 
 .mini-stats {
   display: grid;
-  margin-top: 100px;
+  margin-top: 72px;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--line);
 }
@@ -781,24 +787,24 @@ h3 {
 
 .stat-number {
   font-family: var(--serif);
-  font-size: 64px;
+  font-size: 50px;
   font-weight: 300;
   letter-spacing: -0.04em;
 }
 
 .stat-card p {
-  margin: 8px 0 0;
+  margin: 5px 0 0;
   color: var(--muted);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .home-cta {
   position: relative;
   overflow: hidden;
-  margin-block: 110px;
-  padding: 100px max(32px, 8vw);
+  margin-block: 82px;
+  padding: 76px max(32px, 7vw);
   border-radius: 34px;
   background: #171a19;
   color: #f5f2eb;
@@ -812,7 +818,7 @@ h3 {
 .home-cta h2 {
   position: relative;
   z-index: 1;
-  margin: 28px auto 38px;
+  margin: 22px auto 30px;
 }
 
 .home-cta .button {
@@ -2113,7 +2119,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: clamp(78px, 14vw, 116px);
+    font-size: clamp(64px, 11vw, 88px);
   }
 
   .portrait-stage {
@@ -2187,7 +2193,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: clamp(62px, 20vw, 88px);
+    font-size: clamp(52px, 17vw, 70px);
     line-height: 0.88;
   }
 
@@ -2241,7 +2247,7 @@ h3 {
   .section-topline h2,
   .mission-statement h2,
   .contact-panel h2 {
-    font-size: clamp(44px, 14vw, 64px);
+    font-size: clamp(36px, 11vw, 52px);
   }
 
   .mission-grid {
@@ -2249,7 +2255,7 @@ h3 {
   }
 
   .mini-stats {
-    margin-top: 65px;
+    margin-top: 48px;
   }
 
   .stat-card {
@@ -2261,17 +2267,18 @@ h3 {
   }
 
   .stat-number {
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .stat-card p {
-    font-size: 9px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
   }
 
   .home-cta,
   .contact-panel {
-    margin-block: 70px;
-    padding: 62px 20px;
+    margin-block: 58px;
+    padding: 54px 20px;
     border-radius: 23px;
   }
 
@@ -2448,7 +2455,7 @@ h3 {
   }
 
   .hero-title {
-    font-size: 62px;
+    font-size: 52px;
   }
 
   .halo-one {

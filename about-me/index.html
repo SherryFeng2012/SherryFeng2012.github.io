@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="冯晓晴（Sherry Feng）的个人介绍。" />
+    <meta name="theme-color" content="#f3f1ec" />
+    <title>About Me | Sherry Feng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="module">
+      try {
+        await import(`../site-config.js?v=${Date.now()}`);
+      } catch (error) {
+        console.error("Failed to load site content", error);
+      }
+      await import(`../script.js?v=${Date.now()}`);
+    </script>
+  </head>
+  <body class="about-me-page" id="top">
+    <div class="cursor-light" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../" aria-label="Sherry Feng 首页">
+        <i class="fa-solid fa-rocket brand-icon" aria-hidden="true"></i>
+        <span class="brand-name"><span data-content="brand.first">Sherry</span><span class="brand-accent" data-content="brand.accent">Feng</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="../">Home</a>
+        <a href="../about-tgt/">About TGT</a>
+        <a class="active" href="./">About Me</a>
+        <a href="https://research.joyai.com/" data-href="links.research" target="_blank" rel="noreferrer">Research ↗</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换深色模式">
+          <span class="theme-sun">☼</span>
+          <span class="theme-moon">☾</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" aria-label="移动端导航">
+        <a href="../">Home</a>
+        <a href="../about-tgt/">About TGT</a>
+        <a href="./">About Me</a>
+        <a href="https://research.joyai.com/" data-href="links.research" target="_blank" rel="noreferrer">Research ↗</a>
+      </nav>
+    </header>
+
+    <main class="about-me-main shell">
+      <section class="about-me-profile reveal">
+        <img class="about-me-avatar" src="../assets/sherry-feng.jpg" data-src="home.photo" alt="冯晓晴 Sherry Feng" data-alt="home.photoAlt" width="630" height="630" />
+        <div>
+          <p class="about-me-eyebrow">ABOUT ME</p>
+          <h1><span data-content="home.nameEnglish">Sherry Feng</span><small>/ <span data-content="home.nameChinese">冯晓晴</span></small></h1>
+          <p class="about-me-subtitle" data-content="aboutMe.subtitle">xxxx</p>
+        </div>
+      </section>
+
+      <section class="about-me-section reveal">
+        <p class="about-me-section-label" data-content="aboutMe.mission.label">Mission</p>
+        <div class="about-me-mission">
+          <strong data-content="aboutMe.mission.highlight">xxxx</strong>
+          <span data-content="aboutMe.mission.description">xxxx</span>
+        </div>
+      </section>
+
+      <section class="about-me-section reveal">
+        <p class="about-me-section-label" data-content="aboutMe.experience.label">Experience</p>
+        <div class="experience-list" id="experience-list"></div>
+      </section>
+
+      <section class="about-me-section reveal">
+        <p class="about-me-section-label" data-content="aboutMe.education.label">Education</p>
+        <div class="education-list" id="education-list"></div>
+      </section>
+
+      <section class="about-me-section reveal">
+        <p class="about-me-section-label" data-content="aboutMe.contact.label">Connect</p>
+        <div class="about-me-contact" id="about-me-contact"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p>© <span data-year></span> Sherry Feng</p>
+      <p>JD Technology &amp; JoyAI · TGT</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

@@ -29,6 +29,98 @@ document.querySelectorAll("[data-placeholder]").forEach((element) => {
   if (typeof value === "string") element.setAttribute("placeholder", value);
 });
 
+const experienceList = document.querySelector("#experience-list");
+
+if (experienceList) {
+  const experiences = siteContent.aboutMe?.experience?.items || [];
+
+  experiences.forEach((experience) => {
+    const item = document.createElement("article");
+    item.className = "experience-item";
+
+    const period = document.createElement("p");
+    period.className = "experience-period";
+    period.textContent = experience.period;
+
+    const body = document.createElement("div");
+    body.className = "experience-body";
+
+    const company = document.createElement("p");
+    company.className = "experience-company";
+    company.textContent = experience.company;
+
+    const title = document.createElement("h3");
+    title.textContent = experience.title;
+
+    const description = document.createElement("p");
+    description.className = "experience-description";
+    description.textContent = experience.description;
+
+    const tags = document.createElement("div");
+    tags.className = "experience-tags";
+    (experience.tags || []).forEach((tag) => {
+      const tagElement = document.createElement("span");
+      tagElement.textContent = tag;
+      tags.append(tagElement);
+    });
+
+    body.append(company, title, description, tags);
+    item.append(period, body);
+    experienceList.append(item);
+  });
+}
+
+const educationList = document.querySelector("#education-list");
+
+if (educationList) {
+  const educationItems = siteContent.aboutMe?.education?.items || [];
+
+  educationItems.forEach((education) => {
+    const item = document.createElement("article");
+    item.className = "education-item";
+
+    const period = document.createElement("span");
+    period.className = "education-period";
+    period.textContent = education.period;
+
+    const school = document.createElement("strong");
+    school.textContent = education.school;
+
+    const description = document.createElement("span");
+    description.className = "education-description";
+    description.textContent = education.description;
+
+    item.append(period, school, description);
+    educationList.append(item);
+  });
+}
+
+const aboutMeContact = document.querySelector("#about-me-contact");
+
+if (aboutMeContact) {
+  const contactItems = siteContent.aboutMe?.contact?.items || [];
+
+  contactItems.forEach((contact) => {
+    const item = document.createElement(contact.href ? "a" : "div");
+    item.className = `about-me-contact-card${contact.href ? " clickable" : ""}`;
+
+    if (contact.href) {
+      item.href = contact.href;
+      if (/^https?:/i.test(contact.href)) {
+        item.target = "_blank";
+        item.rel = "noreferrer";
+      }
+    }
+
+    const label = document.createElement("span");
+    label.textContent = contact.label;
+    const value = document.createElement("strong");
+    value.textContent = contact.value;
+    item.append(label, value);
+    aboutMeContact.append(item);
+  });
+}
+
 const root = document.documentElement;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

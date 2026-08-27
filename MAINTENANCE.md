@@ -46,7 +46,31 @@
 email: "mailto:fengxiaojing.sherry@jd.com",
 ```
 
-## 三、更换主页头像
+## 三、维护 About Me 页面
+
+个人介绍页地址为 `/about-me/`，内容集中在 `site-config.js` 的 `aboutMe` 中。目前未知信息统一使用 `xxxx` 占位。
+
+- `subtitle`：姓名下方的一句话介绍。
+- `mission`：个人使命标题和说明。
+- `experience.items`：工作经历列表。
+- `education.items`：教育经历列表。
+- `contact.items`：联系方式列表。
+
+新增工作经历时，复制 `experience.items` 中从 `{` 到 `},` 的完整一段，粘贴后修改：
+
+```js
+{
+  period: "xxxx",
+  company: "xxxx",
+  title: "xxxx",
+  description: "xxxx",
+  tags: ["xxxx", "xxxx"],
+},
+```
+
+教育经历和联系方式也采用同样方式增删。联系方式的 `href` 留空时只展示文字；填写 `mailto:` 或 `https://` 链接后，卡片可以点击。
+
+## 四、更换主页头像
 
 推荐上传新的文件名，避免浏览器继续显示旧图片：
 
@@ -54,12 +78,12 @@ email: "mailto:fengxiaojing.sherry@jd.com",
 2. 点击 **Add file → Upload files**。
 3. 上传 JPG、PNG 或 WebP 图片，例如 `sherry-feng-2027.jpg`。
 4. 提交图片。
-5. 打开 `site-config.js`，把 `home.photo` 改为 `assets/sherry-feng-2027.jpg`。
+5. 打开 `site-config.js`，把 `home.photo` 改为 `/assets/sherry-feng-2027.jpg`。
 6. 同时更新 `home.photoAlt`，然后提交。
 
 建议使用清晰的正方形照片，尺寸至少为 600 × 600 像素，人物尽量位于中央。
 
-## 四、维护 TGT 课题
+## 五、维护 TGT 课题
 
 所有课题保存在根目录的 `positions-data.js`。每条数据格式如下：
 
@@ -79,13 +103,13 @@ email: "mailto:fengxiaojing.sherry@jd.com",
 
 页面默认显示应届生课题。实习生课题需要切换到“实习生课题”查看；课题较多时可搜索标题或翻页。
 
-## 五、修改模型与论文
+## 六、修改模型与论文
 
 - 模型和论文的跳转地址在 `site-config.js` 的 `links` 中修改。
 - 模型和论文的名称、简介及图片仍在 `about-tgt/index.html` 中修改。
 - 图片文件统一放在 `assets/research` 文件夹。
 
-## 六、检查与恢复
+## 七、检查与恢复
 
 - 如果页面没有立即更新，先确认 **Actions** 已完成，再强制刷新浏览器。
 - 如果页面内容消失，优先检查上一行末尾是否缺少逗号、英文引号是否成对。

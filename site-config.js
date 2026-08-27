@@ -19,7 +19,7 @@ window.SITE_CONTENT = {
     acmMm2026: "https://research.joyai.com/blog/acm-mm-2026-papers",
   },
   home: {
-    photo: "assets/sherry-feng.jpg",
+    photo: "/assets/sherry-feng.jpg",
     photoAlt: "冯晓晴 Sherry Feng",
     nameChinese: "冯晓晴",
     nameEnglish: "Sherry Feng",
@@ -66,6 +66,47 @@ window.SITE_CONTENT = {
     contact: {
       heading: "关于 TGT，还有问题？",
       action: "联系 Sherry",
+    },
+  },
+  aboutMe: {
+    subtitle: "xxxx",
+    mission: {
+      label: "Mission",
+      highlight: "xxxx",
+      description: "xxxx",
+    },
+    experience: {
+      label: "Experience",
+      items: [
+        {
+          period: "xxxx",
+          company: "xxxx",
+          title: "xxxx",
+          description: "xxxx",
+          tags: ["xxxx", "xxxx", "xxxx"],
+        },
+        {
+          period: "xxxx",
+          company: "xxxx",
+          title: "xxxx",
+          description: "xxxx",
+          tags: ["xxxx", "xxxx"],
+        },
+      ],
+    },
+    education: {
+      label: "Education",
+      items: [
+        { period: "xxxx", school: "xxxx", description: "xxxx" },
+        { period: "xxxx", school: "xxxx", description: "xxxx" },
+      ],
+    },
+    contact: {
+      label: "Connect",
+      items: [
+        { label: "Email", value: "fengxiaojing.sherry@jd.com", href: "mailto:fengxiaojing.sherry@jd.com" },
+        { label: "WeChat", value: "xxxx", href: "" },
+      ],
     },
   },
 };

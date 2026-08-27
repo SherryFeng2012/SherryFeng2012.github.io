@@ -435,8 +435,8 @@ h3 {
 /* Home */
 .profile-hero {
   display: grid;
-  min-height: calc(100svh - 86px);
-  padding-block: 68px 90px;
+  min-height: 0;
+  padding-block: 52px 64px;
   grid-template-columns: 1.02fr 0.98fr;
   align-items: center;
   gap: 64px;
@@ -527,7 +527,7 @@ h3 {
 
 .social-row {
   display: flex;
-  margin: 58px 0 0 60px;
+  margin: 40px 0 0 60px;
   align-items: center;
   gap: 18px;
   color: var(--muted);
@@ -550,7 +550,7 @@ h3 {
 .portrait-stage {
   position: relative;
   display: grid;
-  min-height: 600px;
+  min-height: 500px;
   place-items: center;
   perspective: 1100px;
 }
@@ -558,7 +558,7 @@ h3 {
 .portrait-frame {
   position: relative;
   z-index: 2;
-  width: min(420px, 78vw);
+  width: min(360px, 76vw);
   aspect-ratio: 0.79;
   overflow: hidden;
   border-radius: 240px 240px 24px 24px;
@@ -602,13 +602,13 @@ h3 {
 }
 
 .halo-one {
-  width: 530px;
-  height: 530px;
+  width: 440px;
+  height: 440px;
 }
 
 .halo-two {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   border-style: dashed;
   opacity: 0.58;
   animation: spin 32s linear infinite;
@@ -723,12 +723,13 @@ h3 {
 }
 
 .mission-preview {
+  padding-block: 72px;
   border-bottom: 1px solid var(--line);
 }
 
 .mission-grid {
   display: grid;
-  margin-top: 55px;
+  margin-top: 36px;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 64px;
 }
@@ -767,13 +768,13 @@ h3 {
 
 .mini-stats {
   display: grid;
-  margin-top: 72px;
+  margin-top: 44px;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--line);
 }
 
 .stat-card {
-  padding: 34px 24px 10px 0;
+  padding: 24px 24px 4px 0;
   border-right: 1px solid var(--line);
 }
 
@@ -803,8 +804,8 @@ h3 {
 .home-cta {
   position: relative;
   overflow: hidden;
-  margin-block: 82px;
-  padding: 76px max(32px, 7vw);
+  margin-block: 58px;
+  padding: 58px max(32px, 6vw);
   border-radius: 34px;
   background: #171a19;
   color: #f5f2eb;
@@ -2107,9 +2108,9 @@ h3 {
 
   .profile-hero {
     min-height: auto;
-    padding-top: 110px;
+    padding-top: 74px;
     grid-template-columns: 1fr;
-    gap: 80px;
+    gap: 48px;
   }
 
   .hero-summary,
@@ -2123,7 +2124,7 @@ h3 {
   }
 
   .portrait-stage {
-    min-height: 620px;
+    min-height: 500px;
   }
 
   .mission-grid {
@@ -2188,8 +2189,8 @@ h3 {
   }
 
   .profile-hero {
-    padding-block: 72px 70px;
-    gap: 38px;
+    padding-block: 58px 52px;
+    gap: 28px;
   }
 
   .hero-title {
@@ -2217,21 +2218,21 @@ h3 {
   }
 
   .portrait-stage {
-    min-height: 470px;
+    min-height: 400px;
   }
 
   .portrait-frame {
-    width: min(320px, 82vw);
+    width: min(280px, 78vw);
   }
 
   .halo-one {
-    width: 390px;
-    height: 390px;
+    width: 330px;
+    height: 330px;
   }
 
   .halo-two {
-    width: 430px;
-    height: 430px;
+    width: 370px;
+    height: 370px;
   }
 
   .portrait-label {
@@ -2251,11 +2252,11 @@ h3 {
   }
 
   .mission-grid {
-    margin-top: 38px;
+    margin-top: 28px;
   }
 
   .mini-stats {
-    margin-top: 48px;
+    margin-top: 34px;
   }
 
   .stat-card {
@@ -2277,8 +2278,8 @@ h3 {
 
   .home-cta,
   .contact-panel {
-    margin-block: 58px;
-    padding: 54px 20px;
+    margin-block: 46px;
+    padding: 46px 20px;
     border-radius: 23px;
   }
 

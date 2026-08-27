@@ -37,6 +37,6 @@ window.TGT_POSITIONS = [
   { cohort: "intern", org: "technology", field: "智能体", title: "CodeAI 代码大模型全链路与推理优化", id: 8883 },
   { cohort: "intern", org: "technology", field: "具身智能", title: "空间智能增强的具身端到端操作大模型探索研究", id: 8798 },
   { cohort: "intern", org: "technology", field: "具身智能", title: "机器人移动操作全身协同控制算法研究", id: 8805 },
-  { cohort: "intern", org: "technology", field: "具身智能", title: "Test", id: 10000 },
+  { cohort: "intern", org: "technology", field: "大模型", title: "test", id: 10000 },
   { cohort: "intern", org: "technology", field: "具身智能", title: "复杂几何空间与动态交互场景的移动避障导航算法研究", id: 8811 },
 ];

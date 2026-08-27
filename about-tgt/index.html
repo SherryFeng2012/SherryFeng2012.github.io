@@ -10,8 +10,14 @@
     <meta name="theme-color" content="#101314" />
     <title>About TGT | Sherry Feng</title>
     <link rel="stylesheet" href="../styles.css" />
-    <script src="../positions-data.js" defer></script>
-    <script src="../script.js" defer></script>
+    <script type="module">
+      try {
+        await import(`../positions-data.js?v=${Date.now()}`);
+      } catch (error) {
+        console.error("Failed to load position data", error);
+      }
+      await import("../script.js");
+    </script>
   </head>
   <body class="tgt-page" id="top">
     <div class="cursor-light" aria-hidden="true"></div>

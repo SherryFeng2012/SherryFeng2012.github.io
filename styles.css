@@ -494,7 +494,7 @@ h3 {
 
 .hero-summary {
   max-width: 520px;
-  margin: 28px 0 0 60px;
+  margin: 28px 0 0 19px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.9;
@@ -502,7 +502,7 @@ h3 {
 
 .hero-actions {
   display: flex;
-  margin: 30px 0 0 60px;
+  margin: 30px 0 0 19px;
   align-items: center;
   gap: 30px;
 }
@@ -527,7 +527,7 @@ h3 {
 
 .social-row {
   display: flex;
-  margin: 40px 0 0 60px;
+  margin: 40px 0 0 19px;
   align-items: center;
   gap: 18px;
   color: var(--muted);
@@ -2116,7 +2116,7 @@ h3 {
   .hero-summary,
   .hero-actions,
   .social-row {
-    margin-left: 0;
+    margin-left: 19px;
   }
 
   .hero-title {

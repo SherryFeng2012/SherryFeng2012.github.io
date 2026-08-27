@@ -5,130 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Sherry 的个人主页，记录项目、学习与生活灵感。"
+      content="冯晓晴（Sherry Feng），京东科技与探索研究院 TGT 招聘负责人。"
     />
-    <title>Sherry | Personal Homepage</title>
+    <meta name="theme-color" content="#f3f1ec" />
+    <title>冯晓晴 Sherry Feng | JD TGT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
-    <div class="page-glow page-glow-one"></div>
-    <div class="page-glow page-glow-two"></div>
+  <body class="home-page" id="top">
+    <div class="cursor-light" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="返回首页">
-        <span class="brand-mark">S</span>
-        <span>Sherry</span>
+    <header class="site-header shell">
+      <a class="brand" href="index.html" aria-label="Sherry Feng 首页">
+        <span class="brand-orbit"><span></span></span>
+        <span class="brand-name">SHERRY<span>FENG</span></span>
       </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="#about">关于我</a>
-        <a href="#interests">我的关注</a>
-        <a href="#contact">联系我</a>
+
+      <nav class="desktop-nav" aria-label="主导航">
+        <a class="active" href="index.html">Home</a>
+        <a href="about-tgt/">About TGT</a>
+        <a href="https://research.joyai.com/" target="_blank" rel="noreferrer">Research ↗</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="切换深色模式">
-        <span aria-hidden="true">☼</span>
-      </button>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换深色模式">
+          <span class="theme-sun">☼</span>
+          <span class="theme-moon">☾</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" aria-label="移动端导航">
+        <a href="index.html">Home</a>
+        <a href="about-tgt/">About TGT</a>
+        <a href="https://research.joyai.com/" target="_blank" rel="noreferrer">Research ↗</a>
+      </nav>
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> HELLO, NICE TO MEET YOU</p>
-          <h1>你好，我是 <em>Sherry</em></h1>
-          <p class="hero-intro">
-            欢迎来到我的网络小站。这里记录我的项目、学习过程，以及每一个值得收藏的灵感瞬间。
+      <section class="profile-hero shell">
+        <div class="hero-copy">
+          <div class="hero-kicker reveal">
+            <span class="live-dot"></span>
+            TGT TALENT PARTNER · BEIJING
+          </div>
+          <h1 class="hero-title reveal">
+            冯晓晴
+            <span>Sherry Feng</span>
+          </h1>
+          <div class="hero-role reveal">
+            <span class="role-line"></span>
+            <p>京东科技 &amp; 探索研究院<br /><strong>TGT 招聘负责人</strong></p>
+          </div>
+          <p class="hero-summary reveal">
+            寻找那些愿意把好奇心变成技术突破的人。连接顶尖青年人才与京东前沿 AI 研究机会，一起探索智能的下一站。
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#about">认识我 <span>→</span></a>
-            <a
-              class="button button-secondary"
-              href="https://github.com/SherryFeng2012"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-              <span>↗</span>
+          <div class="hero-actions reveal">
+            <a class="button button-dark magnetic" href="about-tgt/">
+              探索 TGT 机会 <span>↗</span>
+            </a>
+            <a class="text-link" href="mailto:fengxiaojing.sherry@jd.com">
+              <span class="mail-icon">@</span> 联系 Sherry
             </a>
           </div>
-        </div>
-
-        <div class="hero-visual reveal" aria-hidden="true">
-          <div class="orbit orbit-large"></div>
-          <div class="orbit orbit-small"></div>
-          <div class="portrait-card">
-            <div class="portrait-shine"></div>
-            <span class="portrait-initial">S</span>
-            <p>Stay curious.</p>
+          <div class="social-row reveal">
+            <span>Find me</span>
+            <i></i>
+            <a href="https://github.com/SherryFeng2012" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="mailto:fengxiaojing.sherry@jd.com">Email ↗</a>
           </div>
-          <span class="floating-tag tag-create">CREATE</span>
-          <span class="floating-tag tag-learn">LEARN</span>
-          <span class="spark spark-one">✦</span>
-          <span class="spark spark-two">✦</span>
+        </div>
+
+        <div class="portrait-stage reveal" data-tilt>
+          <div class="portrait-halo halo-one"></div>
+          <div class="portrait-halo halo-two"></div>
+          <div class="portrait-label label-top">TECH<br />GENIUS</div>
+          <div class="portrait-label label-bottom">TALENT<br />PARTNER</div>
+          <div class="portrait-frame">
+            <img
+              src="assets/sherry-feng.jpg"
+              alt="冯晓晴 Sherry Feng"
+              width="630"
+              height="630"
+            />
+            <span class="photo-shine"></span>
+          </div>
+          <div class="portrait-badge">
+            <span>JD</span>
+            <p>Technology<br />&amp; JoyAI</p>
+          </div>
+          <span class="orbit-dot dot-one"></span>
+          <span class="orbit-dot dot-two"></span>
         </div>
       </section>
 
-      <section class="section about" id="about">
-        <div class="section-heading reveal">
-          <p class="section-number">01 / ABOUT</p>
-          <h2>保持好奇，持续生长。</h2>
-        </div>
-        <div class="about-content reveal">
-          <p class="about-lead">
-            我相信每一次探索都在塑造更好的自己。
-          </p>
-          <p>
-            这是我的第一块数字空间。我会在这里整理正在完成的事情、分享新学到的知识，也记录生活中带来启发的小事。
-          </p>
-          <div class="signature">Sherry <span>✦</span></div>
-        </div>
-      </section>
-
-      <section class="section interests" id="interests">
-        <div class="section-heading reveal">
-          <p class="section-number">02 / EXPLORE</p>
-          <h2>现在关注的事情</h2>
-        </div>
-        <div class="card-grid">
-          <article class="interest-card reveal">
-            <span class="card-icon">01</span>
-            <h3>项目实践</h3>
-            <p>把想法变成真实、可用、不断完善的作品。</p>
-            <span class="card-line"></span>
-          </article>
-          <article class="interest-card reveal">
-            <span class="card-icon">02</span>
-            <h3>学习笔记</h3>
-            <p>整理新知识，让每一次学习都有迹可循。</p>
-            <span class="card-line"></span>
-          </article>
-          <article class="interest-card reveal">
-            <span class="card-icon">03</span>
-            <h3>灵感收藏</h3>
-            <p>收集设计、文字与生活里让人眼前一亮的瞬间。</p>
-            <span class="card-line"></span>
-          </article>
+      <section class="ticker" aria-label="TGT 研究方向">
+        <div class="ticker-track">
+          <span>TECH GENIUS TEAM</span><i>✦</i>
+          <span>FOUNDATION MODELS</span><i>✦</i>
+          <span>EMBODIED AI</span><i>✦</i>
+          <span>MULTIMODAL AI</span><i>✦</i>
+          <span>AI INFRA</span><i>✦</i>
+          <span>TECH GENIUS TEAM</span><i>✦</i>
+          <span>FOUNDATION MODELS</span><i>✦</i>
+          <span>EMBODIED AI</span><i>✦</i>
+          <span>MULTIMODAL AI</span><i>✦</i>
+          <span>AI INFRA</span><i>✦</i>
         </div>
       </section>
 
-      <section class="contact reveal" id="contact">
-        <p class="section-number">03 / CONTACT</p>
-        <h2>很高兴认识你。</h2>
-        <p>有想法想要交流？随时给我写信。</p>
-        <a class="contact-link" href="mailto:1173426941@qq.com">
-          1173426941@qq.com <span>↗</span>
+      <section class="mission-preview shell section-space">
+        <div class="section-index reveal">01 — WHAT I DO</div>
+        <div class="mission-grid">
+          <div class="mission-heading reveal">
+            <h2>让顶尖人才与<br /><em>前沿问题</em> 相遇。</h2>
+          </div>
+          <div class="mission-copy reveal">
+            <p>
+              TGT（Tech Genius Team）聚焦高潜力青年技术人才。我的工作，是让每一位真正热爱技术的人找到适合自己的研究课题、导师与成长空间。
+            </p>
+            <a class="arrow-link" href="about-tgt/">了解 TGT 计划 <span>→</span></a>
+          </div>
+        </div>
+        <div class="mini-stats">
+          <article class="stat-card reveal">
+            <span class="stat-number">39</span>
+            <p>开放研究课题</p>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-number">02</span>
+            <p>核心团队</p>
+          </article>
+          <article class="stat-card reveal">
+            <span class="stat-number">∞</span>
+            <p>技术可能性</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-cta shell reveal">
+        <div class="cta-orbit" aria-hidden="true"><span></span></div>
+        <p class="section-index">02 — NEXT MOVE</p>
+        <h2>你的下一个研究课题，<br />也许就在这里。</h2>
+        <a class="button button-light magnetic" href="about-tgt/#positions">
+          查看全部课题 <span>↗</span>
         </a>
       </section>
     </main>
 
-    <footer>
-      <p>© <span id="year"></span> Sherry Feng</p>
-      <p>Made with curiosity &amp; care.</p>
+    <footer class="site-footer shell">
+      <p>© <span data-year></span> Sherry Feng</p>
+      <p>JD Technology &amp; JoyAI · TGT</p>
+      <a href="#top">Back to top ↑</a>
     </footer>
   </body>
 </html>

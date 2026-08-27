@@ -891,7 +891,7 @@ h3 {
 
 .tgt-hero {
   position: relative;
-  min-height: 680px;
+  min-height: 440px;
   overflow: hidden;
   background: #101314;
   color: #f3f1eb;
@@ -928,9 +928,11 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
-  min-height: 680px;
-  padding-block: 72px 82px;
-  align-content: center;
+  min-height: 440px;
+  padding-block: 54px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  align-items: center;
+  gap: 80px;
 }
 
 .tgt-hero .hero-kicker {
@@ -938,13 +940,13 @@ h3 {
 }
 
 .tgt-title {
-  max-width: 950px;
-  margin: 24px 0 32px;
+  max-width: 720px;
+  margin: 18px 0 24px;
   font-family: var(--serif);
-  font-size: clamp(76px, 9vw, 126px);
+  font-size: clamp(60px, 6.4vw, 88px);
   font-weight: 500;
   letter-spacing: -0.07em;
-  line-height: 0.78;
+  line-height: 0.9;
 }
 
 .tgt-title em {
@@ -952,26 +954,22 @@ h3 {
   font-weight: 300;
 }
 
-.tgt-intro {
-  display: grid;
-  max-width: 820px;
-  margin-left: auto;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 48px;
+.tgt-hero-summary {
+  padding-left: 40px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.tgt-intro p {
+.tgt-hero-summary > p {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.62);
-  font-size: 15px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .hero-metrics {
   display: flex;
-  margin-top: 46px;
-  gap: 58px;
+  margin: 28px 0;
+  gap: 30px;
 }
 
 .hero-metrics div {
@@ -982,13 +980,13 @@ h3 {
 
 .hero-metrics strong {
   font-family: var(--serif);
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 300;
 }
 
 .hero-metrics span {
   color: rgba(255, 255, 255, 0.44);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.1em;
 }
@@ -1027,31 +1025,33 @@ h3 {
 }
 
 .tgt-mission {
+  padding-block: 72px;
   border-bottom: 1px solid var(--line);
 }
 
 .mission-statement {
   display: grid;
   margin-top: 42px;
-  grid-template-columns: 0.4fr 1.6fr;
+  grid-template-columns: 0.65fr 1.35fr;
   gap: 40px;
 }
 
 .mission-statement > p {
   padding-top: 12px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
 .mission-statement h2 {
   max-width: 960px;
-  font-size: clamp(44px, 5vw, 68px);
+  font-size: clamp(38px, 4vw, 56px);
 }
 
 .discipline-cloud {
   display: flex;
-  margin-top: 54px;
-  padding-top: 28px;
+  margin-top: 36px;
+  padding-top: 22px;
   flex-wrap: wrap;
   gap: 10px;
   border-top: 1px solid var(--line);
@@ -1083,6 +1083,46 @@ h3 {
   background: var(--paper);
 }
 
+.work-section {
+  padding-block: 78px 66px;
+  border-bottom: 1px solid var(--line);
+}
+
+.work-tabs {
+  display: flex;
+  padding: 4px;
+  gap: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+}
+
+.work-tabs button {
+  padding: 9px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.work-tabs button.active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.work-panel[hidden] {
+  display: none;
+}
+
+.work-footer {
+  display: flex;
+  margin-top: 28px;
+  justify-content: flex-end;
+}
+
 .section-topline {
   display: flex;
   align-items: end;
@@ -1098,7 +1138,7 @@ h3 {
 .model-rail {
   display: grid;
   width: var(--shell);
-  margin: 52px auto 0;
+  margin: 40px auto 0;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
@@ -1111,7 +1151,7 @@ h3 {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 332px;
+  min-height: 286px;
   overflow: hidden;
   padding: 12px;
   flex-direction: column;
@@ -1301,7 +1341,7 @@ h3 {
 }
 
 .model-card-copy h3 {
-  margin: 15px 2px 7px;
+  margin: 12px 2px 5px;
   font-family: var(--serif);
   font-size: clamp(19px, 1.65vw, 25px);
   font-weight: 500;
@@ -1328,14 +1368,14 @@ h3 {
 
 .paper-grid {
   display: grid;
-  margin-top: 52px;
+  margin-top: 40px;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
 .paper-card {
   position: relative;
-  min-height: 270px;
+  min-height: 245px;
   overflow: hidden;
   border-radius: 16px;
   background: #1c2523;
@@ -1395,6 +1435,7 @@ h3 {
 
 .positions-section {
   background: var(--paper);
+  padding-block: 82px;
 }
 
 .positions-note {
@@ -1406,7 +1447,7 @@ h3 {
 }
 
 .position-controls {
-  margin-top: 50px;
+  margin-top: 38px;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 20px;
@@ -1654,12 +1695,49 @@ h3 {
 .contact-panel {
   position: relative;
   overflow: hidden;
-  margin-block: 78px;
-  padding: 72px max(32px, 8vw);
-  border-radius: 34px;
+  margin-block: 56px;
+  padding: 52px max(28px, 6vw);
+  border-radius: 24px;
   background: #171a19;
   color: #f5f2eb;
   text-align: center;
+}
+
+.contact-strip {
+  display: flex;
+  margin-block: 44px;
+  padding: 28px 32px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-radius: 18px;
+  background: #171a19;
+  color: #f5f2eb;
+}
+
+.contact-strip .section-index {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.contact-strip h2 {
+  margin-bottom: 0;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 500;
+}
+
+.contact-strip > a {
+  display: inline-flex;
+  min-width: 156px;
+  padding: 13px 18px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-radius: 999px;
+  background: #f5f2eb;
+  color: #171a19;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .contact-panel::before {
@@ -1683,11 +1761,12 @@ h3 {
 
 .contact-panel h2 {
   position: relative;
-  margin: 28px auto 26px;
+  margin: 18px auto 16px;
+  font-size: clamp(38px, 4.5vw, 58px);
 }
 
 .contact-panel > p:not(.section-index) {
-  margin-bottom: 34px;
+  margin-bottom: 22px;
   font-size: 13px;
 }
 
@@ -1954,36 +2033,45 @@ h3 {
   .home-cta,
   .contact-panel {
     margin-block: 70px;
-    padding: 76px 20px;
+    padding: 62px 20px;
     border-radius: 23px;
+  }
+
+  .contact-panel {
+    margin-block: 48px;
+    padding-block: 46px;
+  }
+
+  .contact-panel h2 {
+    font-size: clamp(36px, 11vw, 48px);
   }
 
   .tgt-hero,
   .tgt-hero-content {
-    min-height: 620px;
+    min-height: 540px;
   }
 
   .tgt-hero-content {
-    padding-block: 62px 74px;
+    padding-block: 52px;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 30px;
   }
 
   .tgt-title {
-    margin: 26px 0 34px;
-    font-size: clamp(64px, 20vw, 92px);
-    line-height: 0.82;
+    margin: 18px 0 0;
+    font-size: clamp(50px, 14vw, 66px);
+    line-height: 0.92;
   }
 
-  .tgt-intro {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .tgt-intro .button {
-    width: max-content;
+  .tgt-hero-summary {
+    padding: 24px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 0;
   }
 
   .hero-metrics {
-    margin-top: 55px;
+    margin: 22px 0;
     gap: 20px;
   }
 
@@ -2006,7 +2094,19 @@ h3 {
   }
 
   .discipline-cloud {
-    margin-top: 55px;
+    margin-top: 32px;
+  }
+
+  .tgt-mission {
+    padding-block: 58px;
+  }
+
+  .work-section {
+    padding-block: 60px 52px;
+  }
+
+  .work-tabs {
+    align-self: flex-start;
   }
 
   .section-topline {
@@ -2024,9 +2124,9 @@ h3 {
   }
 
   .model-card {
-    width: 76vw;
-    min-width: 76vw;
-    min-height: 340px;
+    width: 68vw;
+    min-width: 68vw;
+    min-height: 270px;
   }
 
   .paper-grid {
@@ -2038,9 +2138,9 @@ h3 {
   }
 
   .paper-card {
-    width: 82vw;
-    min-width: 82vw;
-    min-height: 300px;
+    width: 76vw;
+    min-width: 76vw;
+    min-height: 260px;
   }
 
   .paper-copy {
@@ -2050,6 +2150,21 @@ h3 {
   .position-controls {
     margin-top: 48px;
     padding: 14px;
+  }
+
+  .positions-section {
+    padding-block: 64px;
+  }
+
+  .contact-strip {
+    margin-block: 36px;
+    padding: 24px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-strip > a {
+    width: 100%;
   }
 
   .position-toolbar {

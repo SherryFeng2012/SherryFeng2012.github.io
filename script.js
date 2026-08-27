@@ -167,6 +167,23 @@ if (modelVideos.length) {
   modelVideos.forEach((video) => videoObserver.observe(video));
 }
 
+const workTabs = document.querySelectorAll("[data-work-tab]");
+const workPanels = document.querySelectorAll("[data-work-panel]");
+
+workTabs.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.workTab;
+    workTabs.forEach((tab) => tab.classList.toggle("active", tab === button));
+    workPanels.forEach((panel) => {
+      const isActive = panel.dataset.workPanel === target;
+      panel.hidden = !isActive;
+      if (isActive) {
+        panel.querySelectorAll(".reveal").forEach((element) => element.classList.add("visible"));
+      }
+    });
+  });
+});
+
 const canvas = document.querySelector("#tgt-network");
 
 if (canvas) {

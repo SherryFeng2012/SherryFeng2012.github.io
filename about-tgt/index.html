@@ -50,31 +50,27 @@
         <canvas id="tgt-network" aria-hidden="true"></canvas>
         <div class="tgt-hero-grid" aria-hidden="true"></div>
         <div class="shell tgt-hero-content">
-          <p class="hero-kicker reveal"><span class="live-dot"></span> TECH GENIUS TEAM · 2027</p>
-          <h1 class="tgt-title reveal">
-            Build what<br />
-            <em>comes next.</em>
-          </h1>
-          <div class="tgt-intro reveal">
-            <p>
-              TGT 是京东面向全球优秀青年技术人才打造的顶尖人才计划。在真实产业场景中，和一流团队一起探索 AI 的下一条边界。
-            </p>
+          <div class="tgt-hero-heading">
+            <p class="hero-kicker reveal"><span class="live-dot"></span> JD TGT · 2027</p>
+            <h1 class="tgt-title reveal">Tech Genius <em>Team</em></h1>
+          </div>
+          <div class="tgt-hero-summary reveal">
+            <p>TGT 是京东面向全球优秀青年技术人才打造的顶尖人才计划，与一流团队一起探索 AI 的下一条边界。</p>
+            <div class="hero-metrics">
+              <div><strong>39</strong><span>开放课题</span></div>
+              <div><strong>02</strong><span>核心团队</span></div>
+              <div><strong>07</strong><span>前沿方向</span></div>
+            </div>
             <a class="button button-red magnetic" href="#positions">查看开放课题 <span>↓</span></a>
           </div>
-          <div class="hero-metrics reveal">
-            <div><strong>39</strong><span>开放课题</span></div>
-            <div><strong>02</strong><span>招聘类型</span></div>
-            <div><strong>07</strong><span>前沿方向</span></div>
-          </div>
         </div>
-        <div class="scroll-cue" aria-hidden="true"><span></span>SCROLL TO EXPLORE</div>
       </section>
 
       <section class="tgt-mission shell section-space">
         <div class="section-index reveal">01 — THE MISSION</div>
         <div class="mission-statement reveal">
-          <p>我们在寻找</p>
-          <h2>对未知保持兴奋，<br />对难题保持耐心的 <em>Tech Genius.</em></h2>
+          <p>我们寻找对未知保持兴奋、对难题保持耐心的 Tech Genius。</p>
+          <h2>在真实产业场景中，<br />探索技术的下一条边界。</h2>
         </div>
         <div class="discipline-cloud reveal" aria-label="研究方向">
           <span class="hot">基础大模型</span>
@@ -88,17 +84,19 @@
         </div>
       </section>
 
-      <section class="models-section section-space">
+      <section class="models-section work-section section-space">
         <div class="shell section-topline reveal">
           <div>
             <p class="section-index">02 — SELECTED WORK</p>
-            <h2>JoyAI 模型矩阵</h2>
+            <h2>代表性成果</h2>
           </div>
-          <a class="arrow-link" href="https://research.joyai.com/models" target="_blank" rel="noreferrer">
-            查看全部模型 <span>↗</span>
-          </a>
+          <div class="work-tabs" aria-label="成果类型">
+            <button class="active" type="button" data-work-tab="models">模型成果</button>
+            <button type="button" data-work-tab="papers">论文成果</button>
+          </div>
         </div>
-        <div class="model-rail">
+        <div class="work-panel" data-work-panel="models">
+          <div class="model-rail">
           <a class="model-card model-coral reveal" href="https://research.joyai.com/joy-video-edit" target="_blank" rel="noreferrer">
             <div class="model-card-top"><span>01</span><span>VIDEO · EDIT</span></div>
             <div class="model-media">
@@ -154,52 +152,46 @@
               <span>查看项目 ↗</span>
             </div>
           </a>
-        </div>
-      </section>
-
-      <section class="papers-section shell section-space">
-        <div class="section-topline reveal">
-          <div>
-            <p class="section-index">03 — RESEARCH</p>
-            <h2>近期研究成果</h2>
           </div>
-          <a class="arrow-link" href="https://research.joyai.com/research" target="_blank" rel="noreferrer">
-            博客 &amp; 论文 <span>↗</span>
-          </a>
         </div>
-        <div class="paper-grid">
-          <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/eccv-2026-papers" target="_blank" rel="noreferrer">
-            <img src="../assets/research/eccv-2026.webp" alt="ECCV 2026 京东探索研究院论文入选" loading="lazy" />
-            <div class="paper-copy">
-              <span>ECCV 2026 · 4 PAPERS</span>
-              <h3>多模态大模型细粒度幻觉诊断与空间推理</h3>
-              <p>探索多模态理解中的幻觉识别、空间推理与缓解方法。</p>
-            </div>
-          </a>
-          <a class="paper-card reveal" href="https://research.joyai.com/blog/iros-2026-papers" target="_blank" rel="noreferrer">
-            <img src="../assets/research/iros-2026.webp" alt="IROS 2026 京东探索研究院论文入选" loading="lazy" />
-            <div class="paper-copy">
-              <span>IROS 2026</span>
-              <h3>具身智能视觉语言导航</h3>
-              <p>从模仿学习到强化学习协同训练。</p>
-            </div>
-          </a>
-          <a class="paper-card reveal" href="https://research.joyai.com/blog/icml-2026-papers" target="_blank" rel="noreferrer">
-            <img src="../assets/research/icml-2026.webp" alt="ICML 2026 京东探索研究院论文入选" loading="lazy" />
-            <div class="paper-copy">
-              <span>ICML 2026 · 2 PAPERS</span>
-              <h3>生成模型对齐与大模型推理</h3>
-              <p>围绕生成模型与语言模型推理展开前沿探索。</p>
-            </div>
-          </a>
-          <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/acm-mm-2026-papers" target="_blank" rel="noreferrer">
-            <img src="../assets/research/acmmm-2026.webp" alt="ACM MM 2026 京东探索研究院论文入选" loading="lazy" />
-            <div class="paper-copy">
-              <span>ACM MM 2026 · 3 PAPERS</span>
-              <h3>多模态幻觉诊断、空间推理与扩散模型奖励</h3>
-              <p>覆盖多模态大模型与生成式 AI 的关键研究问题。</p>
-            </div>
-          </a>
+        <div class="work-panel shell" data-work-panel="papers" hidden>
+          <div class="paper-grid">
+            <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/eccv-2026-papers" target="_blank" rel="noreferrer">
+              <img src="../assets/research/eccv-2026.webp" alt="ECCV 2026 京东探索研究院论文入选" loading="lazy" />
+              <div class="paper-copy">
+                <span>ECCV 2026 · 4 PAPERS</span>
+                <h3>多模态大模型细粒度幻觉诊断与空间推理</h3>
+                <p>探索多模态理解中的幻觉识别、空间推理与缓解方法。</p>
+              </div>
+            </a>
+            <a class="paper-card reveal" href="https://research.joyai.com/blog/iros-2026-papers" target="_blank" rel="noreferrer">
+              <img src="../assets/research/iros-2026.webp" alt="IROS 2026 京东探索研究院论文入选" loading="lazy" />
+              <div class="paper-copy">
+                <span>IROS 2026</span>
+                <h3>具身智能视觉语言导航</h3>
+                <p>从模仿学习到强化学习协同训练。</p>
+              </div>
+            </a>
+            <a class="paper-card reveal" href="https://research.joyai.com/blog/icml-2026-papers" target="_blank" rel="noreferrer">
+              <img src="../assets/research/icml-2026.webp" alt="ICML 2026 京东探索研究院论文入选" loading="lazy" />
+              <div class="paper-copy">
+                <span>ICML 2026 · 2 PAPERS</span>
+                <h3>生成模型对齐与大模型推理</h3>
+                <p>围绕生成模型与语言模型推理展开前沿探索。</p>
+              </div>
+            </a>
+            <a class="paper-card paper-wide reveal" href="https://research.joyai.com/blog/acm-mm-2026-papers" target="_blank" rel="noreferrer">
+              <img src="../assets/research/acmmm-2026.webp" alt="ACM MM 2026 京东探索研究院论文入选" loading="lazy" />
+              <div class="paper-copy">
+                <span>ACM MM 2026 · 3 PAPERS</span>
+                <h3>多模态幻觉诊断、空间推理与扩散模型奖励</h3>
+                <p>覆盖多模态大模型与生成式 AI 的关键研究问题。</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="shell work-footer">
+          <a class="arrow-link" href="https://research.joyai.com/" target="_blank" rel="noreferrer">前往 JoyAI 研究门户 <span>↗</span></a>
         </div>
       </section>
 
@@ -207,7 +199,7 @@
         <div class="shell">
           <div class="section-topline reveal">
             <div>
-              <p class="section-index">04 — OPEN POSITIONS</p>
+              <p class="section-index">03 — OPEN POSITIONS</p>
               <h2>TGT 课题投递</h2>
             </div>
             <p class="positions-note">选择感兴趣的方向，点击即可前往京东校园招聘官网投递。</p>
@@ -255,14 +247,12 @@
         </div>
       </section>
 
-      <section class="contact-panel shell reveal">
-        <div class="contact-spark" aria-hidden="true">✦</div>
-        <p class="section-index">05 — SAY HELLO</p>
-        <h2>还没找到答案？<br /><em>直接问 Sherry.</em></h2>
-        <p>关于 TGT 计划、课题方向或投递流程，欢迎邮件联系。</p>
-        <a class="button button-light magnetic" href="mailto:fengxiaojing.sherry@jd.com">
-          fengxiaojing.sherry@jd.com <span>↗</span>
-        </a>
+      <section class="contact-strip shell reveal">
+        <div>
+          <p class="section-index">04 — CONTACT</p>
+          <h2>关于 TGT，还有问题？</h2>
+        </div>
+        <a href="mailto:fengxiaojing.sherry@jd.com">联系 Sherry <span>↗</span></a>
       </section>
     </main>
 
